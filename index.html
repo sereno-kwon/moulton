@@ -1,0 +1,695 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>몰튼 바이시클 코리아 | Moulton Bicycles Korea</title>
+<meta name="description" content="1962년부터 영국에서 수제작되는 풀 서스펜션 미니벨로, 몰튼. 몰튼 바이시클 한국 공식 수입원 루비컴퍼니.">
+<meta property="og:title" content="Moulton Bicycles Korea | 몰튼 바이시클 코리아">
+<meta property="og:description" content="Innovative British bicycle design since 1962. Official Korean importer: Rubi Company.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://moultonbicycles.co.kr/">
+<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;600&family=Noto+Sans+SC:wght@300;400;500;600&display=swap">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+<style>
+/* ===== Fonts ===== */
+@font-face{font-family:'S-CoreDream';font-weight:300;font-style:normal;src:url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-3Light.woff') format('woff');font-display:swap}
+@font-face{font-family:'S-CoreDream';font-weight:500;font-style:normal;src:url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-5Medium.woff') format('woff');font-display:swap}
+@font-face{font-family:'S-CoreDream';font-weight:600;font-style:normal;src:url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-6Bold.woff') format('woff');font-display:swap}
+
+/* ===== Tokens ===== */
+:root{
+  --bg:#ffffff;
+  --bg-soft:#f4f3f0;
+  --ink:#121212;
+  --ink-2:#4a4a4a;
+  --ink-3:#8a8a8a;
+  --line:#e3e1dc;
+  --red:#c8102e;
+  --red-dark:#a30d26;
+  --max:1360px;
+  --gutter:clamp(16px,4vw,56px);
+  --en:'Pretendard Variable',Pretendard,-apple-system,BlinkMacSystemFont,system-ui,'Helvetica Neue',Arial,sans-serif;
+  --ko:'S-CoreDream','Pretendard Variable',Pretendard,-apple-system,system-ui,sans-serif;
+  --ja:'Pretendard Variable','Noto Sans JP',-apple-system,'Hiragino Sans','Hiragino Kaku Gothic ProN',system-ui,sans-serif;
+  --zh:'Pretendard Variable','Noto Sans SC',-apple-system,'PingFang SC','Microsoft YaHei',system-ui,sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{background:var(--bg);color:var(--ink);font-family:var(--en);font-weight:400;line-height:1.6;letter-spacing:-0.005em;overflow-x:hidden}
+html[lang="ko"] body{font-family:var(--ko);font-weight:300;letter-spacing:-0.01em}
+html[lang="ja"] body{font-family:var(--ja);font-weight:400;letter-spacing:0}
+html[lang="zh"] body{font-family:var(--zh);font-weight:400;letter-spacing:0}
+html[lang="ja"] h2,html[lang="ja"] h3{font-family:var(--ja);font-weight:500;letter-spacing:0}
+html[lang="zh"] h2,html[lang="zh"] h3{font-family:var(--zh);font-weight:500;letter-spacing:0}
+img{display:block;max-width:100%;height:auto}
+a{color:inherit;text-decoration:none}
+button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
+.wrap{max-width:var(--max);margin:0 auto;padding:0 var(--gutter)}
+.eyebrow{font-family:var(--en);font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--red);font-weight:600;margin-bottom:14px}
+h1,h2,h3{font-family:var(--en);font-weight:600;line-height:1.12;letter-spacing:-0.02em}
+html[lang="ko"] h2,html[lang="ko"] h3{font-family:var(--ko);font-weight:500;letter-spacing:-0.02em}
+h2{font-size:clamp(28px,3.6vw,46px)}
+h3{font-size:clamp(22px,2.4vw,30px)}
+p{color:var(--ink-2);font-size:clamp(15px,1.1vw,17px);max-width:60ch}
+.btn{display:inline-flex;align-items:center;gap:10px;font-family:var(--en);font-size:13px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;padding:14px 26px;border:1px solid var(--ink);color:var(--ink);transition:background .25s,color .25s,border-color .25s}
+.btn:hover{background:var(--ink);color:#fff}
+.btn.light{border-color:#fff;color:#fff}
+.btn.light:hover{background:#fff;color:var(--ink)}
+.btn.red{background:var(--red);border-color:var(--red);color:#fff}
+.btn.red:hover{background:var(--red-dark);border-color:var(--red-dark)}
+.link{font-family:var(--en);font-size:13px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;border-bottom:1px solid currentColor;padding-bottom:3px}
+.link:after{content:"\2192";margin-left:8px}
+
+/* ===== Top ticker ===== */
+.ticker{background:var(--ink);color:#fff;font-family:var(--en);font-size:11px;letter-spacing:.28em;text-transform:uppercase;overflow:hidden;height:34px;display:flex;align-items:center}
+.ticker__track{display:flex;white-space:nowrap;animation:ticker 40s linear infinite;will-change:transform}
+.ticker__track span{padding:0 48px}
+.ticker__track span:before{content:"\25CF";font-size:6px;vertical-align:middle;margin-right:48px;color:var(--red)}
+@keyframes ticker{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+
+/* ===== Header ===== */
+.header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.92);backdrop-filter:saturate(180%) blur(12px);-webkit-backdrop-filter:saturate(180%) blur(12px);border-bottom:1px solid var(--line)}
+.header__in{display:flex;align-items:center;justify-content:space-between;height:72px;gap:24px}
+.logo img{height:26px;width:auto}
+.nav{display:flex;gap:34px;font-family:var(--en);font-size:12px;font-weight:600;letter-spacing:.16em;text-transform:uppercase}
+.nav a{position:relative;padding:6px 0}
+.nav a:after{content:"";position:absolute;left:0;bottom:0;height:1px;width:0;background:var(--red);transition:width .25s}
+.nav a:hover:after{width:100%}
+.header__right{display:flex;align-items:center;gap:18px}
+.lang{display:flex;border:1px solid var(--line);font-family:var(--en);font-size:11px;font-weight:600;letter-spacing:.1em}
+.lang button{padding:7px 12px;color:var(--ink-3)}
+.lang button.on{background:var(--ink);color:#fff}
+.burger{display:none;width:40px;height:40px;position:relative}
+.burger span{position:absolute;left:10px;right:10px;height:1.5px;background:var(--ink);transition:.25s}
+.burger span:nth-child(1){top:14px}.burger span:nth-child(2){top:20px}.burger span:nth-child(3){top:26px}
+.burger.open span:nth-child(1){top:20px;transform:rotate(45deg)}
+.burger.open span:nth-child(2){opacity:0}
+.burger.open span:nth-child(3){top:20px;transform:rotate(-45deg)}
+.mnav{display:none;position:fixed;inset:72px 0 0;background:#fff;z-index:49;padding:32px var(--gutter);flex-direction:column;gap:6px}
+.mnav.open{display:flex}
+.mnav a{font-family:var(--en);font-size:28px;font-weight:600;letter-spacing:-.01em;padding:12px 0;border-bottom:1px solid var(--line)}
+.mnav small{display:block;font-size:12px;letter-spacing:.2em;color:var(--ink-3);margin-top:28px;text-transform:uppercase}
+
+/* ===== Hero ===== */
+.hero{position:relative;height:min(92vh,900px);min-height:520px;overflow:hidden;background:#1a1a1a}
+.hero img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center}
+.hero:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.15) 0%,rgba(0,0,0,0) 35%,rgba(0,0,0,.55) 100%)}
+.hero__txt{position:absolute;left:0;right:0;bottom:clamp(40px,8vh,90px);z-index:2;color:#fff}
+.hero__txt .eyebrow{color:#fff;opacity:.85}
+.hero__txt h1{font-size:clamp(40px,7vw,96px);line-height:.98;letter-spacing:-.03em;max-width:12ch}
+html[lang="ja"] .hero__txt h1,html[lang="zh"] .hero__txt h1{max-width:none;letter-spacing:0;line-height:1.1;word-break:keep-all;white-space:nowrap}
+html[lang="ko"] .hero__txt h1{word-break:keep-all}
+.hero__txt h1 em{font-style:normal;font-weight:300}
+.hero__txt p{color:rgba(255,255,255,.82);margin-top:22px;max-width:46ch}
+.hero__txt .btn{margin-top:30px}
+.hero__scroll{position:absolute;right:var(--gutter);bottom:36px;z-index:2;color:#fff;font-family:var(--en);font-size:10px;letter-spacing:.3em;text-transform:uppercase;writing-mode:vertical-rl;opacity:.7}
+
+/* ===== Intro ===== */
+.intro{padding:clamp(72px,10vw,140px) 0;text-align:center}
+.intro img{height:52px;margin:0 auto 36px;width:auto}
+.intro h2{font-family:var(--en);font-weight:300;font-size:clamp(30px,4.6vw,62px);letter-spacing:.06em;text-transform:uppercase}
+.intro p{margin:28px auto 0;max-width:62ch;font-size:clamp(16px,1.25vw,19px)}
+
+/* ===== Banner (NS Rapide / Adventures) ===== */
+.banner{position:relative;height:min(80vh,760px);min-height:440px;overflow:hidden;background:#222}
+.banner img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.banner:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(0,0,0,.5) 0%,rgba(0,0,0,.1) 60%)}
+.banner__txt{position:absolute;inset:0;z-index:2;display:flex;flex-direction:column;justify-content:center;color:#fff}
+.banner__txt .eyebrow{color:#fff;opacity:.85}
+.banner__txt h2{font-size:clamp(40px,6vw,84px);line-height:1;letter-spacing:-.02em}
+.banner__txt h2 em{font-style:italic;font-weight:300}
+.banner__txt p{color:rgba(255,255,255,.85);margin-top:18px}
+.banner__txt .btn{margin-top:30px;align-self:flex-start}
+.banner.right .banner__txt .btn{align-self:flex-end}
+.banner.right .banner__txt{align-items:flex-end;text-align:right}
+.banner.right:after{background:linear-gradient(270deg,rgba(0,0,0,.5) 0%,rgba(0,0,0,.1) 60%)}
+.banner blockquote{font-family:var(--en);font-weight:300;font-size:clamp(26px,3.6vw,50px);line-height:1.15;letter-spacing:-.02em;max-width:18ch;margin-top:6px}
+.banner cite{display:block;font-style:normal;font-family:var(--en);font-size:12px;letter-spacing:.2em;text-transform:uppercase;margin-top:20px;opacity:.75}
+
+/* ===== Feature rows ===== */
+.features{padding:clamp(40px,6vw,80px) 0 0}
+.feat{display:grid;grid-template-columns:1fr 1fr;align-items:center;gap:clamp(32px,6vw,96px);padding:clamp(40px,6vw,88px) 0;border-top:1px solid var(--line)}
+.feat:first-child{border-top:0}
+.feat__img{position:relative;overflow:hidden;aspect-ratio:4/3;background:var(--bg-soft)}
+.feat__img img{width:100%;height:100%;object-fit:cover;transition:transform 1.2s cubic-bezier(.2,.7,.2,1)}
+.feat:hover .feat__img img{transform:scale(1.04)}
+.feat:nth-child(even) .feat__img{order:2}
+.feat__txt h2{margin-bottom:20px}
+.feat__txt p{margin-bottom:28px}
+
+/* ===== One bike / before-after ===== */
+.onebike{background:var(--bg-soft);padding:clamp(72px,9vw,130px) 0}
+.onebike__head{text-align:center;margin-bottom:clamp(36px,5vw,64px)}
+.onebike__head h2{font-family:var(--en);font-weight:300;font-size:clamp(30px,4.4vw,60px);letter-spacing:-.02em}
+.onebike__head p{margin:22px auto 30px}
+.ba{position:relative;width:100%;aspect-ratio:16/9;overflow:hidden;background:#e9e8e4;user-select:none;cursor:ew-resize}
+.ba img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.ba__after{clip-path:inset(0 0 0 50%)}
+.ba__handle{position:absolute;top:0;bottom:0;left:50%;width:2px;background:#fff;box-shadow:0 0 0 1px rgba(0,0,0,.15);transform:translateX(-1px);pointer-events:none}
+.ba__handle:before{content:"\2190 \2192";position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:48px;height:48px;border-radius:50%;background:#fff;color:var(--ink);display:flex;align-items:center;justify-content:center;font-family:var(--en);font-size:12px;letter-spacing:.05em;box-shadow:0 2px 12px rgba(0,0,0,.2)}
+.ba__label{position:absolute;bottom:16px;font-family:var(--en);font-size:11px;letter-spacing:.2em;text-transform:uppercase;background:rgba(255,255,255,.85);padding:6px 12px;color:var(--ink)}
+.ba__label.l{left:16px}.ba__label.r{right:16px}
+.ba input{position:absolute;inset:0;width:100%;height:100%;opacity:0;cursor:ew-resize;margin:0}
+
+/* ===== Bikes grid ===== */
+.bikes{padding:clamp(72px,9vw,130px) 0}
+.bikes__head{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:end;margin-bottom:clamp(36px,5vw,60px)}
+.bikes__head p{max-width:56ch}
+.filters{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:34px}
+.filters button{font-family:var(--en);font-size:11px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;padding:9px 16px;border:1px solid var(--line);color:var(--ink-2);transition:.2s}
+.filters button:hover{border-color:var(--ink)}
+.filters button.on{background:var(--ink);border-color:var(--ink);color:#fff}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:40px 28px}
+.card{display:block;position:relative}
+.card.hide{display:none}
+.card__img{position:relative;aspect-ratio:1/1;background:var(--bg-soft);overflow:hidden}
+.card__img img{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;padding:8%;transition:opacity .4s}
+.card__img img.alt{opacity:0}
+.card:hover .card__img img.main{opacity:0}
+.card:hover .card__img img.alt{opacity:1}
+.card__tag{position:absolute;top:14px;left:14px;z-index:2;font-family:var(--en);font-size:10px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;background:var(--red);color:#fff;padding:5px 9px}
+.card__body{padding:18px 2px 0;display:flex;justify-content:space-between;align-items:baseline;gap:12px}
+.card__name{font-family:var(--en);font-size:15px;font-weight:600;letter-spacing:.08em;text-transform:uppercase}
+.card__series{font-family:var(--en);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-3);display:block;margin-top:4px}
+.card__price{font-family:var(--en);font-size:14px;color:var(--ink-2);white-space:nowrap;font-variant-numeric:tabular-nums}
+.card__price.ask{color:var(--ink-3);font-size:12px;letter-spacing:.08em}
+.bikes__foot{margin-top:40px;display:flex;justify-content:center;gap:14px;flex-wrap:wrap}
+.bikes__note{text-align:center;font-size:12px;color:var(--ink-3);margin-top:22px;max-width:none}
+
+/* ===== Where to buy ===== */
+.buy{background:var(--ink);color:#fff;padding:clamp(72px,9vw,130px) 0}
+.buy h2{text-align:center;margin-bottom:clamp(40px,6vw,72px)}
+.buy__grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:rgba(255,255,255,.12)}
+.buy__item{background:var(--ink);padding:36px 28px 40px;display:flex;flex-direction:column;min-height:300px}
+.buy__item h3{font-size:18px;letter-spacing:.06em;text-transform:uppercase;margin-bottom:16px}
+.buy__item p{color:rgba(255,255,255,.72);flex:1;font-size:14.5px}
+.buy__item .link{align-self:flex-start;margin-top:26px}
+.buy__num{font-family:var(--en);font-size:11px;letter-spacing:.22em;color:var(--red);margin-bottom:22px}
+
+/* ===== Stories ===== */
+.stories{padding:clamp(72px,9vw,130px) 0}
+.stories__head{display:flex;justify-content:space-between;align-items:end;margin-bottom:clamp(32px,4vw,52px)}
+.stories__grid{display:grid;grid-template-columns:1fr 1fr;gap:28px}
+.story{display:block;border-top:1px solid var(--ink);padding-top:22px}
+.story__img{aspect-ratio:16/10;overflow:hidden;background:var(--bg-soft);margin-bottom:20px}
+.story__img img{width:100%;height:100%;object-fit:cover;transition:transform 1s cubic-bezier(.2,.7,.2,1)}
+.story:hover .story__img img{transform:scale(1.04)}
+.story__meta{font-family:var(--en);font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--ink-3);margin-bottom:10px}
+.story h3{margin-bottom:8px}
+.story p{font-size:15px}
+
+/* ===== Press ===== */
+.press{background:var(--bg-soft);padding:clamp(64px,8vw,110px) 0;text-align:center}
+.press .eyebrow{margin-bottom:28px}
+.press__q{font-family:var(--en);font-weight:300;font-size:clamp(22px,2.8vw,38px);line-height:1.25;letter-spacing:-.02em;max-width:26ch;margin:0 auto;min-height:3.8em;display:flex;align-items:center;justify-content:center;transition:opacity .4s}
+.press__q.fade{opacity:0}
+.press__logos{display:flex;justify-content:center;gap:clamp(20px,4vw,56px);margin-top:40px;flex-wrap:wrap}
+.press__logos button{opacity:.3;transition:opacity .25s;padding:6px}
+.press__logos button.on,.press__logos button:hover{opacity:1}
+.press__logos img{height:22px;width:auto;filter:grayscale(1)}
+
+/* ===== Footer ===== */
+.footer{border-top:1px solid var(--line);padding:clamp(56px,7vw,90px) 0 40px;font-size:14px}
+.footer__grid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:40px}
+.footer h4{font-family:var(--en);font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--ink-3);margin-bottom:18px;font-weight:600}
+.footer ul{list-style:none}
+.footer li{margin-bottom:9px}
+.footer li a:hover{color:var(--red)}
+.footer__about img{height:46px;width:auto;margin-bottom:22px}
+.footer__about p{font-size:14px;max-width:38ch;margin-bottom:16px}
+.footer__about small{display:block;color:var(--ink-3);font-size:12.5px;line-height:1.7}
+.footer__bot{display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap;margin-top:56px;padding-top:24px;border-top:1px solid var(--line);font-family:var(--en);font-size:12px;color:var(--ink-3);letter-spacing:.02em}
+.footer__social{display:flex;gap:18px}
+.footer__social a{display:inline-flex;align-items:center;gap:6px}
+.footer__social svg{width:16px;height:16px;fill:currentColor}
+
+/* ===== Reveal ===== */
+.rv{opacity:0;transform:translateY(22px);transition:opacity .8s ease,transform .8s cubic-bezier(.2,.7,.2,1)}
+.rv.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){.rv{opacity:1;transform:none;transition:none}.ticker__track{animation:none}}
+
+/* ===== Responsive ===== */
+@media (max-width:1024px){
+  .grid{grid-template-columns:repeat(2,1fr)}
+  .buy__grid{grid-template-columns:repeat(2,1fr)}
+  .footer__grid{grid-template-columns:1fr 1fr}
+}
+@media (max-width:820px){
+  .banner.right .banner__txt .btn{align-self:flex-start}
+  .nav{display:none}
+  .burger{display:block}
+  .feat{grid-template-columns:1fr;gap:24px}
+  .feat:nth-child(even) .feat__img{order:0}
+  .bikes__head{grid-template-columns:1fr;gap:16px}
+  .stories__grid{grid-template-columns:1fr}
+  .stories__head{flex-direction:column;align-items:flex-start;gap:14px}
+  .banner.right .banner__txt{align-items:flex-start;text-align:left}
+  .banner.right:after{background:linear-gradient(90deg,rgba(0,0,0,.5) 0%,rgba(0,0,0,.1) 60%)}
+  .ba{aspect-ratio:4/3}
+}
+@media (max-width:560px){
+  .grid{grid-template-columns:1fr;gap:32px}
+  .buy__grid{grid-template-columns:1fr}
+  .buy__item{min-height:0}
+  .footer__grid{grid-template-columns:1fr;gap:32px}
+  .hero{height:78vh}
+  .hero__scroll{display:none}
+  .card__body{flex-direction:column;gap:6px}
+}
+</style>
+</head>
+<body>
+
+<!-- ===== TICKER ===== -->
+<div class="ticker" aria-hidden="true">
+  <div class="ticker__track">
+    <span>Moulton Bicycles</span><span>Made in England</span><span>Since 1962</span><span>Official Korean Importer · Rubi Company</span>
+    <span>Moulton Bicycles</span><span>Made in England</span><span>Since 1962</span><span>Official Korean Importer · Rubi Company</span>
+  </div>
+</div>
+
+<!-- ===== HEADER ===== -->
+<header class="header">
+  <div class="wrap header__in">
+    <a class="logo" href="#top" aria-label="Moulton Bicycles Korea">
+      <img data-src="Moulton_M_Logo_Red_280_x_80.png" alt="Moulton Bicycles">
+    </a>
+    <nav class="nav" aria-label="Primary">
+      <a href="#bikes" data-ko="모델" data-ja="モデル" data-zh="车型" data-en="Bikes">모델</a>
+      <a href="#moulton" data-ko="몰튼" data-ja="モールトン" data-zh="莫尔顿" data-en="The Moulton">몰튼</a>
+      <a href="#history" data-ko="헤리티지" data-ja="ヘリテージ" data-zh="传承" data-en="Heritage">헤리티지</a>
+      <a href="#buy" data-ko="구매 안내" data-ja="購入案内" data-zh="购买指南" data-en="Where to Buy">구매 안내</a>
+      <a href="https://rubiworkshop.com/models" target="_blank" rel="noopener" data-ko="상담" data-ja="ご相談" data-zh="咨询" data-en="Consulting">상담</a>
+    </nav>
+    <div class="header__right">
+      <div class="lang" role="group" aria-label="Language">
+        <button type="button" data-lang="ko" class="on">KO</button>
+        <button type="button" data-lang="en">EN</button>
+        <button type="button" data-lang="ja">JA</button>
+        <button type="button" data-lang="zh">ZH</button>
+      </div>
+      <button class="burger" type="button" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+<nav class="mnav" aria-label="Mobile">
+  <a href="#bikes" data-ko="모델" data-ja="モデル" data-zh="车型" data-en="Bikes">모델</a>
+  <a href="#moulton" data-ko="몰튼" data-ja="モールトン" data-zh="莫尔顿" data-en="The Moulton">몰튼</a>
+  <a href="#history" data-ko="헤리티지" data-ja="ヘリテージ" data-zh="传承" data-en="Heritage">헤리티지</a>
+  <a href="#buy" data-ko="구매 안내" data-ja="購入案内" data-zh="购买指南" data-en="Where to Buy">구매 안내</a>
+  <a href="https://rubiworkshop.com/models" target="_blank" rel="noopener" data-ko="상담 신청" data-ja="ご相談はこちら" data-zh="预约咨询" data-en="Consulting">상담 신청</a>
+  <small>Moulton Bicycles Korea · Rubi Company</small>
+</nav>
+
+<main id="top">
+
+<!-- ===== HERO ===== -->
+<section class="hero">
+  <img data-src="moulton-ns-safari-bike-with-accessories-1200x628.jpg" alt="Moulton NS Safari" fetchpriority="high">
+  <div class="wrap hero__txt">
+    <div class="eyebrow">Made in England · Since 1962</div>
+    <h1 data-ko="영국이 만든<br>가장 완성된<br><em>미니벨로</em>" data-ja="英国が生んだ<br>究極の<br><em>ミニベロ</em>" data-zh="源自英国的<br>终极<br><em>小轮径自行车</em>" data-en="The ultimate<br>full-suspension<br><em>small-wheeled bicycle</em>">영국이 만든<br>가장 완성된<br><em>미니벨로</em></h1>
+    <p data-ko="60년 넘게 다듬어 온 설계, 영국 브래드퍼드온에이번의 공방에서 한 대씩 손으로 만듭니다." data-ja="60年以上磨き上げてきた設計。英国ブラッドフォード・オン・エイヴォンの工房で一台ずつ手作業で製作しています。" data-zh="历经60余年打磨的设计，在英国布拉德福德昂埃文的工坊中逐台手工制作。" data-en="Refined for over 60 years and hand-crafted in Bradford-on-Avon, England.">60년 넘게 다듬어 온 설계, 영국 브래드퍼드온에이번의 공방에서 한 대씩 손으로 만듭니다.</p>
+    <a class="btn light" href="#bikes" data-ko="모델 보기" data-ja="モデルを見る" data-zh="查看车型" data-en="Explore Bikes">모델 보기</a>
+  </div>
+  <div class="hero__scroll">Scroll</div>
+</section>
+
+<!-- ===== INTRO ===== -->
+<section class="intro" id="moulton">
+  <div class="wrap rv">
+    <img data-src="moulton-trademarked-logo.png" alt="Moulton">
+    <h2>More than an artform</h2>
+    <p data-ko="몰튼은 풀 서스펜션 미니벨로의 완성형입니다. 60년 넘게 정교하게 설계하고 다듬어 온 몰튼은 영국에서 수제작되며, 속도와 효율, 범용성과 승차감으로 세계적인 명성을 얻었습니다." data-ja="モールトンは、フルサスペンション小径自転車の究極の形です。60年以上にわたり精緻に設計・改良され、英国で手作業により製作されるこの自転車は、速さ、効率、汎用性、快適性で世界的な評価を得ています。" data-zh="莫尔顿是全避震小轮径自行车的终极形态。历经60余年的精密设计与打磨，在英国手工制作，以速度、效率、多用途与舒适性享誉世界。" data-en="The Moulton is the ultimate full-suspension, small-wheeled bicycle. Expertly engineered and refined for over 60 years and hand-crafted in England, these bicycles are world renowned for their speed, efficiency, versatility, and comfort.">몰튼은 풀 서스펜션 미니벨로의 완성형입니다. 60년 넘게 정교하게 설계하고 다듬어 온 몰튼은 영국에서 수제작되며, 속도와 효율, 범용성과 승차감으로 세계적인 명성을 얻었습니다.</p>
+  </div>
+</section>
+
+<!-- ===== NEW: NS RAPIDE ===== -->
+<section class="banner">
+  <img data-src="moulton-ns-rapide-stone-pillar-wall-trees.jpg" alt="Moulton NS Rapide" loading="lazy">
+  <div class="wrap banner__txt">
+    <div class="eyebrow" data-ko="신모델" data-ja="新モデル" data-zh="新车型" data-en="The New">신모델</div>
+    <h2>NS <em>Rapide</em></h2>
+    <p data-ko="뉴 시리즈의 최신작. 스테인리스가 아닌 스틸 스페이스 프레임에 캄파놀로 슈퍼 레코드를 조합했습니다." data-ja="ニューシリーズ最新作。ステンレスではなくスチールのスペースフレームに、カンパニョーロ スーパーレコードを組み合わせました。" data-zh="New Series 最新之作。采用钢制而非不锈钢的空间桁架车架，搭配 Campagnolo Super Record 套件。" data-en="The newest addition to the New Series: a steel space-frame paired with Campagnolo Super Record.">뉴 시리즈의 최신작. 스테인리스가 아닌 스틸 스페이스 프레임에 캄파놀로 슈퍼 레코드를 조합했습니다.</p>
+    <a class="btn light" href="https://rubiworkshop.com/models" target="_blank" rel="noopener" data-ko="상담 신청" data-ja="ご相談はこちら" data-zh="预约咨询" data-en="Enquire">상담 신청</a>
+  </div>
+</section>
+
+<!-- ===== FEATURES ===== -->
+<section class="features">
+  <div class="wrap">
+
+    <article class="feat rv">
+      <div class="feat__img"><img data-src="moulton-speed-side-feature.jpg" alt="Moulton Speed" loading="lazy"></div>
+      <div class="feat__txt">
+        <div class="eyebrow">Engineered Elegance</div>
+        <h2 data-ko="설계가 만드는 역동성" data-ja="設計が生む躍動感" data-zh="源于设计的动感" data-en="Dynamic by Design">설계가 만드는 역동성</h2>
+        <p data-ko="몰튼은 작은 바퀴, 고압 타이어, 풀 서스펜션을 하나의 반응성 높은 설계로 묶어 경쾌하고 역동적인 주행감을 만들어 냅니다. 노면을 단순히 흡수하는 데 그치지 않고 프레임이 노면과 함께 움직이며, 추진력과 안정성을 유지하면서도 가속은 빠르고 조향은 정확합니다." data-ja="モールトンは、小径ホイール、高圧タイヤ、フルサスペンションを一つの高反応設計にまとめ、軽快で躍動的な走りを生み出します。路面を単に吸収するのではなく、フレームが路面と共に働き、推進力と安定性を保ちながら、加速は鋭く、ハンドリングは正確です。" data-zh="莫尔顿将小轮径、高压轮胎与全避震融为一体，打造出轻快而富有动感的骑行感受。车架不只是吸收路面冲击，而是与路面协同运作，在保持动力与稳定的同时，加速敏捷、操控精准。" data-en="The Moulton bicycle is engineered to deliver a dynamic, lively ride, combining small wheels, high-pressure tyres and full suspension into a uniquely responsive design. Rather than merely absorbing the road, the frame works with it, maintaining momentum and stability while remaining quick to accelerate and precise to handle.">몰튼은 작은 바퀴, 고압 타이어, 풀 서스펜션을 하나의 반응성 높은 설계로 묶어 경쾌하고 역동적인 주행감을 만들어 냅니다. 노면을 단순히 흡수하는 데 그치지 않고 프레임이 노면과 함께 움직이며, 추진력과 안정성을 유지하면서도 가속은 빠르고 조향은 정확합니다.</p>
+        <a class="link" href="https://www.moultonbicycles.co.uk/pages/about-the-moulton-bike" target="_blank" rel="noopener" data-ko="몰튼 자세히 보기" data-ja="モールトンについて" data-zh="了解莫尔顿" data-en="Explore The Moulton">몰튼 자세히 보기</a>
+      </div>
+    </article>
+
+    <article class="feat rv">
+      <div class="feat__img"><img data-src="moulton-bike-frame-brazing.jpg" alt="Brazing a Moulton frame" loading="lazy"></div>
+      <div class="feat__txt">
+        <div class="eyebrow">Made in England</div>
+        <h2 data-ko="정밀하게, 손으로" data-ja="精密に、手作業で" data-zh="精密，且手工" data-en="Precision Engineered">정밀하게, 손으로</h2>
+        <p data-ko="모든 몰튼은 영국 브래드퍼드온에이번의 유서 깊은 홀 에스테이트에서 숙련된 장인의 손으로 만들어집니다. 세밀한 정밀 가공과 전통적인 수작업이 결합된 소량 생산 방식은 품질에 대한 변함없는 약속을 담고 있습니다." data-ja="すべてのモールトンは、英国ブラッドフォード・オン・エイヴォンの由緒あるホール・エステートで、熟練の職人の手により製作されます。精密加工と伝統的な手仕事を組み合わせた少量生産は、品質への変わらぬ約束です。" data-zh="每一台莫尔顿都在英国布拉德福德昂埃文历史悠久的 Hall Estate 由资深工匠手工打造。精密加工与传统手工相结合的小批量生产方式，承载着对品质始终如一的承诺。" data-en="Every Moulton bicycle is hand-built in England at the historic Hall Estate in Bradford-on-Avon, where skilled craftspeople combine meticulous precision engineering with traditional craftsmanship. Each bike reflects careful, small-scale manufacture and an enduring commitment to quality.">모든 몰튼은 영국 브래드퍼드온에이번의 유서 깊은 홀 에스테이트에서 숙련된 장인의 손으로 만들어집니다. 세밀한 정밀 가공과 전통적인 수작업이 결합된 소량 생산 방식은 품질에 대한 변함없는 약속을 담고 있습니다.</p>
+        <a class="link" href="https://www.moultonbicycles.co.uk/pages/made-in-england" target="_blank" rel="noopener" data-ko="제작 과정 보기" data-ja="製作工程を見る" data-zh="了解制作工艺" data-en="Explore the craft">제작 과정 보기</a>
+      </div>
+    </article>
+
+    <article class="feat rv" id="history">
+      <div class="feat__img"><img data-src="moulton-design-evolution-feature.jpg" alt="Moulton design evolution" loading="lazy"></div>
+      <div class="feat__txt">
+        <div class="eyebrow">Design Heritage</div>
+        <h2 data-ko="1962년부터 이어진 진화" data-ja="1962年から続く進化" data-zh="自1962年不断进化" data-en="Evolving Since 1962">1962년부터 이어진 진화</h2>
+        <p data-ko="1950년대 후반, 알렉스 몰튼 박사는 자동차 공학 경험을 바탕으로 자전거를 처음부터 다시 설계했고, 1962년 혁신적인 F-프레임 몰튼을 내놓았습니다. 1980년대 초부터는 스페이스 프레임 설계로 소량 고품질 생산에 집중하며 승차감과 조향, 범용성을 끌어올렸고, 몰튼을 뛰어난 퍼포먼스·투어링 머신으로 완성했습니다." data-ja="1950年代後半、アレックス・モールトン博士は自動車工学の経験を基に自転車を根本から設計し直し、1962年に革新的なFフレーム・モールトンを発表しました。1980年代初頭からはスペースフレーム設計による少量高品質生産へと移行し、快適性、ハンドリング、汎用性を高め、モールトンを優れたパフォーマンス・ツーリングマシンへと完成させました。" data-zh="20世纪50年代末，亚历克斯·莫尔顿博士凭借汽车工程经验重新设计自行车，并于1962年推出革新性的 F 型车架莫尔顿。自80年代初起转向空间桁架车架的小批量高品质生产，提升了舒适性、操控与多用途性，将莫尔顿打造为卓越的性能与旅行座驾。" data-en="In the late 1950s, drawing on his automotive engineering experience, Dr Alex Moulton set out to redesign the bicycle, leading to the launch of the innovative F-frame Moulton in 1962. From the early 1980s Alex moved towards small-scale, high-quality production with the space-frame design, refining his original principles to improve comfort, handling and versatility, and establishing the Moulton as a highly capable performance and touring machine.">1950년대 후반, 알렉스 몰튼 박사는 자동차 공학 경험을 바탕으로 자전거를 처음부터 다시 설계했고, 1962년 혁신적인 F-프레임 몰튼을 내놓았습니다. 1980년대 초부터는 스페이스 프레임 설계로 소량 고품질 생산에 집중하며 승차감과 조향, 범용성을 끌어올렸고, 몰튼을 뛰어난 퍼포먼스·투어링 머신으로 완성했습니다.</p>
+        <a class="link" href="https://www.moultonbicycles.co.uk/pages/history-of-moulton-bikes" target="_blank" rel="noopener" data-ko="디자인 역사 보기" data-ja="デザインの歴史を見る" data-zh="了解设计演进" data-en="Explore Design Evolution">디자인 역사 보기</a>
+      </div>
+    </article>
+
+    <article class="feat rv">
+      <div class="feat__img"><img data-src="moulton-racing-heritage-feature.jpg" alt="Moulton racing heritage" loading="lazy"></div>
+      <div class="feat__txt">
+        <div class="eyebrow">The Speed Machine</div>
+        <h2 data-ko="레이싱의 혈통" data-ja="レーシングの血統" data-zh="竞速血统" data-en="A Racing Pedigree">레이싱의 혈통</h2>
+        <p data-ko="몰튼의 레이싱 역사는 1962년으로 거슬러 올라갑니다. 로드 레이스와 벨로드롬 경기에서 성과를 거두었고 세계 속도 기록까지 세웠습니다. 수십 년이 지난 지금도 몰튼은 혁신적인 고성능 사이클링과 함께 이야기됩니다." data-ja="モールトンのレース史は1962年に遡ります。ロードレースとトラック競技で成果を挙げ、世界速度記録も樹立しました。数十年を経た今も、モールトンは革新的な高性能サイクリングと共に語られています。" data-zh="莫尔顿的竞速历史可追溯至1962年，在公路赛与场地赛中屡创佳绩，甚至创下世界速度纪录。数十年后的今天，莫尔顿依然与创新的高性能骑行紧密相连。" data-en="The Moulton bicycle has a distinguished racing pedigree dating back to 1962, achieving success in both road racing and velodrome competition and even setting a world speed record. Over the decades it has remained closely associated with innovative, high-performance cycling.">몰튼의 레이싱 역사는 1962년으로 거슬러 올라갑니다. 로드 레이스와 벨로드롬 경기에서 성과를 거두었고 세계 속도 기록까지 세웠습니다. 수십 년이 지난 지금도 몰튼은 혁신적인 고성능 사이클링과 함께 이야기됩니다.</p>
+        <a class="link" href="https://www.moultonbicycles.co.uk/pages/moulton-world-records-racing" target="_blank" rel="noopener" data-ko="레이싱 기록 보기" data-ja="レース記録を見る" data-zh="了解竞速历史" data-en="Explore Moulton Racing">레이싱 기록 보기</a>
+      </div>
+    </article>
+
+  </div>
+</section>
+
+<!-- ===== EPIC ADVENTURES ===== -->
+<section class="banner right">
+  <img data-src="moulton-china-expedition-mountains.jpg" alt="Crossing mountains in Kyrgyzstan on a Moulton, 2015" loading="lazy">
+  <div class="wrap banner__txt">
+    <div class="eyebrow" data-ko="위대한 여정" data-ja="壮大な旅" data-zh="壮阔旅程" data-en="Epic Adventures">위대한 여정</div>
+    <blockquote data-ko="“세계 최고의 투어링 자전거”" data-ja="「世界最高のツーリング自転車」" data-zh="“世界上最好的旅行自行车”" data-en="“The best touring bicycle in the world”">“세계 최고의 투어링 자전거”</blockquote>
+    <cite data-ko="2015년 키르기스스탄 산악 횡단" data-ja="2015年 キルギス山岳横断" data-zh="2015年 穿越吉尔吉斯斯坦山脉" data-en="Kyrgyzstan, 2015">2015년 키르기스스탄 산악 횡단</cite>
+    <a class="btn light" href="https://www.moultonbicycles.co.uk/pages/cycle-touring" target="_blank" rel="noopener" data-ko="여정 보기" data-ja="旅を見る" data-zh="了解旅程" data-en="Explore">여정 보기</a>
+  </div>
+</section>
+
+<!-- ===== ONE BIKE ===== -->
+<section class="onebike">
+  <div class="wrap">
+    <div class="onebike__head rv">
+      <div class="eyebrow" data-ko="타협 없는 범용성" data-ja="妥協のない汎用性" data-zh="毫不妥协的多用途性" data-en="Versatility without compromise">타협 없는 범용성</div>
+      <h2 data-ko="한 대의 자전거, 수많은 가능성" data-ja="一台の自転車、無数の可能性" data-zh="一台车，无限可能" data-en="One Bike, Many Possibilities">한 대의 자전거, 수많은 가능성</h2>
+      <p data-ko="몰튼은 진정한 올라운더입니다. 서스펜션을 갖춘 미니벨로 설계와 단단한 프레임은 빌드 사양, 부품 선택, 액세서리 구성에 따라 투어링, 퍼포먼스, 도심 주행 어디에든 맞출 수 있습니다. 여행용으로 꾸미거나, 속도를 위해 덜어내거나." data-ja="モールトンは真のオールラウンダーです。サスペンション付き小径設計と剛性の高いフレームは、ビルド仕様、パーツ選択、アクセサリー構成によって、ツーリング、パフォーマンス、街乗りのいずれにも合わせられます。旅仕様に仕立てるも、速さのために削ぎ落とすも自在です。" data-zh="莫尔顿是真正的全能座驾。带避震的小轮径设计与刚性车架，可通过装配规格、零件选择与配件组合，适配旅行、性能或城市骑行。为旅途装满，或为速度减负，皆可。" data-en="The Moulton is a true all-round performer. Its suspended, small-wheeled design and rigid frame can be tailored through build specification, component choice, and accessories to suit touring, performance, or urban riding. Easily configured for travel or stripped back for speed!">몰튼은 진정한 올라운더입니다. 서스펜션을 갖춘 미니벨로 설계와 단단한 프레임은 빌드 사양, 부품 선택, 액세서리 구성에 따라 투어링, 퍼포먼스, 도심 주행 어디에든 맞출 수 있습니다. 여행용으로 꾸미거나, 속도를 위해 덜어내거나.</p>
+      <a class="btn" href="https://rubiworkshop.com/models" target="_blank" rel="noopener" data-ko="커스텀 빌드 상담" data-ja="カスタムビルドのご相談" data-zh="定制装配咨询" data-en="Custom Build Consulting">커스텀 빌드 상담</a>
+    </div>
+    <div class="ba rv" id="ba">
+      <img class="ba__before" data-src="moulton-ns-safari-grey-bg.jpg" alt="Moulton NS Safari, stripped back" loading="lazy">
+      <img class="ba__after" data-src="moulton-ns-safari-touring-bags-big-tyres-grey-bg.jpg" alt="Moulton NS Safari, touring setup" loading="lazy">
+      <div class="ba__handle"></div>
+      <span class="ba__label l" data-ko="스피드" data-ja="スピード" data-zh="速度" data-en="Speed">스피드</span>
+      <span class="ba__label r" data-ko="투어링" data-ja="ツーリング" data-zh="旅行" data-en="Touring">투어링</span>
+      <input type="range" min="0" max="100" value="50" aria-label="Compare speed and touring setups">
+    </div>
+  </div>
+</section>
+
+<!-- ===== ALL BIKES ===== -->
+<section class="bikes" id="bikes">
+  <div class="wrap">
+    <div class="bikes__head rv">
+      <div>
+        <div class="eyebrow">All Bikes</div>
+        <h2 data-ko="전 모델" data-ja="全モデル" data-zh="全部车型" data-en="The Range">전 모델</h2>
+      </div>
+      <p data-ko="세련된 퍼포먼스 모델부터 다재다능한 데일리 머신까지, 모든 몰튼은 도심과 교외, 그 너머를 위한 승차감과 효율, 정밀한 설계를 갖추고 있습니다. 영국에서 설계하고 손으로 만드는 각 모델은 미니벨로와 서스펜션이라는 고유한 철학 위에서 매끄럽고 경쾌한 주행을 선사합니다." data-ja="洗練されたパフォーマンスモデルから多用途なデイリーマシンまで、すべてのモールトンは街、郊外、その先へ向けた快適性、効率、精密な設計を備えています。英国で設計され手作業で作られる各モデルは、小径・サスペンションという独自の哲学の上に、滑らかで軽快な走りをもたらします。" data-zh="从精致的性能车型到多用途的日常座驾，每一台莫尔顿都兼具舒适、效率与精密设计，适合城市、郊野及更远的路途。在英国设计并手工制作的每款车型，都建立在小轮径与避震的独特哲学之上，带来顺畅而轻快的骑行。" data-en="From refined performance models to versatile everyday machines, each Moulton bike combines comfort, efficiency and precision engineering for riding in town, country and beyond. Designed and hand-built in Britain, every bike offers a uniquely smooth, lively ride, built around a distinctive small-wheel, suspended design philosophy.">세련된 퍼포먼스 모델부터 다재다능한 데일리 머신까지, 모든 몰튼은 도심과 교외, 그 너머를 위한 승차감과 효율, 정밀한 설계를 갖추고 있습니다. 영국에서 설계하고 손으로 만드는 각 모델은 미니벨로와 서스펜션이라는 고유한 철학 위에서 매끄럽고 경쾌한 주행을 선사합니다.</p>
+    </div>
+    <div class="filters" role="tablist">
+      <button type="button" class="on" data-f="all" data-ko="전체" data-ja="すべて" data-zh="全部" data-en="All">전체</button>
+      <button type="button" data-f="ns">New Series</button>
+      <button type="button" data-f="moulton">Moulton</button>
+      <button type="button" data-f="am">AM</button>
+      <button type="button" data-f="y">Y-frame</button>
+      <button type="button" data-f="se">Special Edition</button>
+    </div>
+    <div class="grid" id="grid"></div>
+    <div class="bikes__foot">
+      <a class="btn" href="https://rubiworkshop.com/models" target="_blank" rel="noopener" data-ko="모델 상담 신청" data-ja="モデルのご相談" data-zh="车型咨询" data-en="Enquire about a model">모델 상담 신청</a>
+      <a class="btn" href="https://sst.moultonbicycles.co.kr" target="_blank" rel="noopener">SST WIDE Korean Edition</a>
+    </div>
+    <p class="bikes__note" data-ko="표시 가격은 기본 사양 기준 국내 소비자가이며, 색상·부품 구성에 따라 달라질 수 있습니다. 프레임셋 단품 구매도 가능합니다." data-ja="表示価格は標準仕様の韓国国内価格であり、カラーやパーツ構成により異なる場合があります。フレームセット単体の購入も可能です。" data-zh="所示价格为标准配置的韩国零售价，可能因颜色与零件配置而有所不同。亦可单独购买车架组。" data-en="Prices shown are Korean retail prices for the standard specification and may vary with colour and component choices. Framesets are also available.">표시 가격은 기본 사양 기준 국내 소비자가이며, 색상·부품 구성에 따라 달라질 수 있습니다. 프레임셋 단품 구매도 가능합니다.</p>
+  </div>
+</section>
+
+<!-- ===== WHERE TO BUY (KOREA) ===== -->
+<section class="buy" id="buy">
+  <div class="wrap">
+    <div class="eyebrow" style="text-align:center" data-ko="구매 안내" data-ja="購入案内" data-zh="购买指南" data-en="Where to Buy">구매 안내</div>
+    <h2 data-ko="몰튼을 만나는 방법" data-ja="モールトンとの出会い方" data-zh="如何购买莫尔顿" data-en="How to buy a Moulton in Korea">몰튼을 만나는 방법</h2>
+    <div class="buy__grid rv">
+      <div class="buy__item">
+        <div class="buy__num">01</div>
+        <h3 data-ko="쇼룸 방문" data-ja="ショールーム" data-zh="到访展厅" data-en="Visit the Showroom">쇼룸 방문</h3>
+        <p data-ko="서울 반포의 루비워크샵은 몰튼 코리아 공식 쇼룸입니다. 전 모델을 직접 보고, 사이즈와 빌드를 상담받을 수 있습니다. 운영시간 월~금 12:00~19:00, 토 10:00~15:30 (일요일 휴무)" data-ja="ソウル・盤浦のRubi Workshopは、モールトン・コリアの公式ショールームです。全モデルを実際にご覧いただき、サイズやビルドのご相談が可能です。営業時間 月〜金 12:00〜19:00、土 10:00〜15:30（日曜休）" data-zh="位于首尔盘浦的 Rubi Workshop 是莫尔顿韩国官方展厅。可现场查看全部车型，并获得尺寸与装配建议。营业时间 周一至周五 12:00–19:00，周六 10:00–15:30（周日休息）" data-en="Rubi Workshop in Banpo, Seoul is the official Moulton showroom in Korea. See the range in person and get sizing and build advice. Open Mon–Fri 12:00–19:00, Sat 10:00–15:30 (closed Sunday).">서울 반포의 루비워크샵은 몰튼 코리아 공식 쇼룸입니다. 전 모델을 직접 보고, 사이즈와 빌드를 상담받을 수 있습니다. 운영시간 월~금 12:00~19:00, 토 10:00~15:30 (일요일 휴무)</p>
+        <a class="link" href="https://rubiworkshop.com" target="_blank" rel="noopener" data-ko="루비워크샵" data-ja="Rubi Workshop" data-zh="Rubi Workshop" data-en="Rubi Workshop">루비워크샵</a>
+      </div>
+      <div class="buy__item">
+        <div class="buy__num">02</div>
+        <h3 data-ko="공식 딜러" data-ja="正規ディーラー" data-zh="授权经销商" data-en="Find a Dealer">공식 딜러</h3>
+        <p data-ko="전국의 몰튼 공식 딜러에서도 재고 확인과 주문이 가능합니다. 가까운 딜러를 안내해 드립니다." data-ja="韓国各地のモールトン正規ディーラーでも在庫確認とご注文が可能です。お近くのディーラーをご案内します。" data-zh="韩国各地的莫尔顿授权经销商亦可查询库存并下单。为您推荐就近的经销商。" data-en="Moulton authorised dealers across Korea can check stock and place orders for you. Find the dealer nearest to you.">전국의 몰튼 공식 딜러에서도 재고 확인과 주문이 가능합니다. 가까운 딜러를 안내해 드립니다.</p>
+        <a class="link" href="/authorized-dealer" data-ko="딜러 찾기" data-ja="ディーラーを探す" data-zh="查找经销商" data-en="Find a Store">딜러 찾기</a>
+      </div>
+      <div class="buy__item">
+        <div class="buy__num">03</div>
+        <h3 data-ko="전화 문의" data-ja="お電話" data-zh="电话咨询" data-en="Call Us">전화 문의</h3>
+        <p data-ko="모델 선택, 사이징, 커스텀 빌드와 납기 안내는 전화로 문의하실 수 있습니다. 1551-5320 (월~금 12:00~19:00, 토 10:00~15:30)" data-ja="モデル選び、サイジング、カスタムビルド、納期についてはお電話でご相談いただけます。+82 1551-5320（月〜金 12:00〜19:00、土 10:00〜15:30 KST）" data-zh="车型选择、尺寸、定制装配与交期，均可电话咨询。+82 1551-5320（周一至周五 12:00–19:00，周六 10:00–15:30 KST）" data-en="For model selection, sizing, custom builds and lead times, call us on 1551-5320 (Mon–Fri 12:00–19:00, Sat 10:00–15:30 KST).">모델 선택, 사이징, 커스텀 빌드와 납기 안내는 전화로 문의하실 수 있습니다. 1551-5320 (월~금 12:00~19:00, 토 10:00~15:30)</p>
+        <a class="link" href="tel:1551-5320">1551-5320</a>
+      </div>
+      <div class="buy__item">
+        <div class="buy__num">04</div>
+        <h3 data-ko="온라인 상담" data-ja="オンライン相談" data-zh="在线咨询" data-en="Online Consulting">온라인 상담</h3>
+        <p data-ko="원하는 모델과 용도를 남겨 주시면 담당자가 빌드 구성과 견적을 안내해 드립니다." data-ja="ご希望のモデルと用途をお知らせいただければ、担当者がビルド構成とお見積りをご案内します。" data-zh="留下您想要的车型与用途，我们将为您提供装配方案与报价。" data-en="Tell us the model and how you ride, and we will come back with a build proposal and quotation.">원하는 모델과 용도를 남겨 주시면 담당자가 빌드 구성과 견적을 안내해 드립니다.</p>
+        <a class="link" href="https://rubiworkshop.com/models" target="_blank" rel="noopener" data-ko="상담 신청" data-ja="ご相談はこちら" data-zh="预约咨询" data-en="Consulting">상담 신청</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== STORIES (replaces UK news) ===== -->
+<section class="stories">
+  <div class="wrap">
+    <div class="stories__head rv">
+      <div>
+        <div class="eyebrow">Stories</div>
+        <h2 data-ko="몰튼 코리아 이야기" data-ja="モールトン・コリアの物語" data-zh="莫尔顿韩国故事" data-en="From Moulton Korea">몰튼 코리아 이야기</h2>
+      </div>
+      <a class="link" href="https://www.instagram.com/rubi.workshop" target="_blank" rel="noopener" data-ko="인스타그램" data-ja="Instagram" data-zh="Instagram" data-en="Instagram">인스타그램</a>
+    </div>
+    <div class="stories__grid rv">
+      <a class="story" href="https://rubiworkshop.com" target="_blank" rel="noopener">
+        <div class="story__img"><img data-src="moulton-speed-urban-graffiti-sq.jpg" alt="" loading="lazy"></div>
+        <div class="story__meta" data-ko="룩북" data-ja="ルックブック" data-zh="造型册" data-en="Lookbook">룩북</div>
+        <h3 data-ko="루비워크샵 몰튼 빌드" data-ja="Rubi Workshopのモールトンビルド" data-zh="Rubi Workshop 的莫尔顿装配" data-en="Moulton builds by Rubi Workshop">루비워크샵 몰튼 빌드</h3>
+        <p data-ko="M60부터 SST까지, 루비워크샵에서 완성한 몰튼 빌드와 부품 구성을 모델별로 소개합니다." data-ja="M60からSSTまで、Rubi Workshopで仕上げたモールトンのビルドとパーツ構成をモデル別にご紹介します。" data-zh="从 M60 到 SST，按车型介绍 Rubi Workshop 完成的莫尔顿装配与零件配置。" data-en="From the M60 to the SST, a model-by-model look at the Moulton builds completed at Rubi Workshop.">M60부터 SST까지, 루비워크샵에서 완성한 몰튼 빌드와 부품 구성을 모델별로 소개합니다.</p>
+      </a>
+      <a class="story" href="https://www.moultonbicycles.co.uk/blogs/news" target="_blank" rel="noopener">
+        <div class="story__img"><img data-src="moulton-ns-rapide-sunrise-orange.jpg" alt="" loading="lazy"></div>
+        <div class="story__meta" data-ko="몰튼 뉴스" data-ja="モールトンニュース" data-zh="莫尔顿新闻" data-en="Moulton News">몰튼 뉴스</div>
+        <h3 data-ko="브래드퍼드온에이번에서 온 소식" data-ja="ブラッドフォード・オン・エイヴォンからの便り" data-zh="来自布拉德福德昂埃文的消息" data-en="News from Bradford-on-Avon">브래드퍼드온에이번에서 온 소식</h3>
+        <p data-ko="신모델, 공장 이야기, 몰튼 바이시클 컴퍼니의 최신 소식을 본사 뉴스에서 확인하세요." data-ja="新モデル、工場の話、モールトン・バイシクル・カンパニーの最新情報は本社ニュースでご覧ください。" data-zh="新车型、工厂故事，以及莫尔顿自行车公司的最新动态，请查看总部新闻。" data-en="New models, factory stories and the latest from the Moulton Bicycle Company.">신모델, 공장 이야기, 몰튼 바이시클 컴퍼니의 최신 소식을 본사 뉴스에서 확인하세요.</p>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ===== PRESS ===== -->
+<section class="press">
+  <div class="wrap">
+    <div class="eyebrow">In the press</div>
+    <div class="press__q rv" id="pressQ"></div>
+    <div class="press__logos" id="pressLogos"></div>
+  </div>
+</section>
+
+</main>
+
+<!-- ===== FOOTER ===== -->
+<footer class="footer">
+  <div class="wrap">
+    <div class="footer__grid">
+      <div class="footer__about">
+        <img data-src="moulton-bicycle-company-trademarked-logo.png" alt="Moulton Bicycle Company">
+        <p data-ko="몰튼 바이시클 컴퍼니는 혁신과 엔지니어링의 탁월함을 중심에 둡니다. 새로운 설계는 이 원칙과 함께, 60년 넘게 쌓아 온 영국 자전거 설계·제조의 경험 위에서 태어납니다." data-ja="モールトン・バイシクル・カンパニーは、革新とエンジニアリングの卓越性を中心に据えています。新しい設計はこの原則と共に、60年以上にわたる英国での自転車設計・製造の経験の上に生まれます。" data-zh="莫尔顿自行车公司以创新与卓越工程为核心。新的设计在这一原则之上，诞生于60余年英国自行车设计与制造的积淀。" data-en="The Moulton Bicycle Company places innovation and engineering excellence at its heart. New designs are led by these principles in combination with the knowledge that comes from over 60 years of experience in British bicycle design and manufacture.">몰튼 바이시클 컴퍼니는 혁신과 엔지니어링의 탁월함을 중심에 둡니다. 새로운 설계는 이 원칙과 함께, 60년 넘게 쌓아 온 영국 자전거 설계·제조의 경험 위에서 태어납니다.</p>
+        <small data-ko="한국 공식 수입원 루비컴퍼니 (Rubi Company)<br>서울 반포 · 루비워크샵 몰튼 쇼룸<br>Tel 1551-5320 · 월~금 12:00~19:00 · 토 10:00~15:30" data-ja="韓国正規輸入元 Rubi Company<br>ソウル・盤浦 Rubi Workshop モールトンショールーム<br>Tel +82 1551-5320 · 月〜金 12:00〜19:00 · 土 10:00〜15:30 KST" data-zh="韩国官方进口商 Rubi Company<br>首尔盘浦 · Rubi Workshop 莫尔顿展厅<br>Tel +82 1551-5320 · 周一至周五 12:00–19:00 · 周六 10:00–15:30 KST" data-en="Official Korean importer: Rubi Company<br>Moulton showroom at Rubi Workshop, Banpo, Seoul<br>Tel +82 1551-5320 · Mon–Fri 12:00–19:00 · Sat 10:00–15:30 KST">한국 공식 수입원 루비컴퍼니 (Rubi Company)<br>서울 반포 · 루비워크샵 몰튼 쇼룸<br>Tel 1551-5320 · 월~금 12:00~19:00 · 토 10:00~15:30</small>
+      </div>
+      <div>
+        <h4 data-ko="지원" data-ja="サポート" data-zh="支持" data-en="Support">지원</h4>
+        <ul>
+          <li><a href="/authorized-dealer" data-ko="공식 딜러" data-ja="正規ディーラー" data-zh="授权经销商" data-en="Find a store">공식 딜러</a></li>
+          <li><a href="https://www.moultonbicycles.co.uk/pages/moulton-bike-colours" target="_blank" rel="noopener" data-ko="컬러" data-ja="カラー" data-zh="颜色" data-en="Colours">컬러</a></li>
+          <li><a href="https://www.moultonbicycles.co.uk/pages/moulton-bike-sizing" target="_blank" rel="noopener" data-ko="사이징" data-ja="サイジング" data-zh="尺寸" data-en="Sizing">사이징</a></li>
+          <li><a href="https://www.moultonbicycles.co.uk/pages/moulton-bike-faqs" target="_blank" rel="noopener">FAQ</a></li>
+          <li><a href="https://rubiworkshop.com/models" target="_blank" rel="noopener" data-ko="상담 신청" data-ja="ご相談はこちら" data-zh="预约咨询" data-en="Consulting">상담 신청</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 data-ko="몰튼" data-ja="モールトン" data-zh="莫尔顿" data-en="Moulton">몰튼</h4>
+        <ul>
+          <li><a href="https://www.moultonbicycles.co.uk/pages/about-the-moulton-bike" target="_blank" rel="noopener" data-ko="몰튼 자전거" data-ja="モールトンの自転車" data-zh="莫尔顿自行车" data-en="The Moulton Bike">몰튼 자전거</a></li>
+          <li><a href="https://www.moultonbicycles.co.uk/pages/moulton-suspension" target="_blank" rel="noopener" data-ko="서스펜션" data-ja="サスペンション" data-zh="避震系统" data-en="Moulton Suspension">서스펜션</a></li>
+          <li><a href="https://www.moultonbicycles.co.uk/pages/about-dr-alex-moulton" target="_blank" rel="noopener" data-ko="알렉스 몰튼 박사" data-ja="アレックス・モールトン博士" data-zh="亚历克斯·莫尔顿博士" data-en="Dr Alex Moulton">알렉스 몰튼 박사</a></li>
+          <li><a href="https://www.moultonbicycles.co.uk/pages/about-the-hall-estate" target="_blank" rel="noopener" data-ko="홀 에스테이트" data-ja="ホール・エステート" data-zh="Hall Estate" data-en="The Hall Estate">홀 에스테이트</a></li>
+          <li><a href="https://www.moultonbicycles.co.uk" target="_blank" rel="noopener">moultonbicycles.co.uk</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 data-ko="루비컴퍼니" data-ja="Rubi Company" data-zh="Rubi Company" data-en="Rubi Company">루비컴퍼니</h4>
+        <ul>
+          <li><a href="https://rubiworkshop.com" target="_blank" rel="noopener" data-ko="루비워크샵" data-ja="Rubi Workshop" data-zh="Rubi Workshop" data-en="Rubi Workshop">루비워크샵</a></li>
+          <li><a href="https://rubisupply.com" target="_blank" rel="noopener" data-ko="루비서플라이 (B2B)" data-ja="Rubi Supply (B2B)" data-zh="Rubi Supply (B2B)" data-en="Rubi Supply (B2B)">루비서플라이 (B2B)</a></li>
+          <li><a href="https://sst.moultonbicycles.co.kr" target="_blank" rel="noopener">SST WIDE Korean Edition</a></li>
+          <li><a href="https://rubi.kr" target="_blank" rel="noopener">rubi.kr</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer__bot">
+      <div>© 2026 Moulton Bicycle Company · Korea site operated by Rubi Company</div>
+      <div class="footer__social">
+        <a href="https://www.instagram.com/moultonbicycles" target="_blank" rel="noopener" aria-label="Moulton Instagram"><svg viewBox="0 0 24 24"><path d="M12 2.2c3.2 0 3.6 0 4.8.1 3.3.1 4.8 1.7 4.9 4.9.1 1.3.1 1.6.1 4.8s0 3.6-.1 4.8c-.1 3.2-1.7 4.8-4.9 4.9-1.3.1-1.6.1-4.8.1s-3.6 0-4.8-.1c-3.3-.1-4.8-1.7-4.9-4.9C2.2 15.6 2.2 15.2 2.2 12s0-3.6.1-4.8C2.4 4 4 2.4 7.2 2.3 8.4 2.2 8.8 2.2 12 2.2zM12 0C8.7 0 8.3 0 7.1.1 2.7.3.3 2.7.1 7.1 0 8.3 0 8.7 0 12s0 3.7.1 4.9c.2 4.4 2.6 6.8 7 7C8.3 24 8.7 24 12 24s3.7 0 4.9-.1c4.4-.2 6.8-2.6 7-7 .1-1.2.1-1.6.1-4.9s0-3.7-.1-4.9c-.2-4.4-2.6-6.8-7-7C15.7 0 15.3 0 12 0zm0 5.8a6.2 6.2 0 1 0 0 12.4 6.2 6.2 0 0 0 0-12.4zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.4-11.8a1.4 1.4 0 1 0 0 2.9 1.4 1.4 0 0 0 0-2.9z"/></svg>moultonbicycles</a>
+        <a href="https://www.instagram.com/rubi.workshop" target="_blank" rel="noopener" aria-label="Rubi Workshop Instagram"><svg viewBox="0 0 24 24"><path d="M12 2.2c3.2 0 3.6 0 4.8.1 3.3.1 4.8 1.7 4.9 4.9.1 1.3.1 1.6.1 4.8s0 3.6-.1 4.8c-.1 3.2-1.7 4.8-4.9 4.9-1.3.1-1.6.1-4.8.1s-3.6 0-4.8-.1c-3.3-.1-4.8-1.7-4.9-4.9C2.2 15.6 2.2 15.2 2.2 12s0-3.6.1-4.8C2.4 4 4 2.4 7.2 2.3 8.4 2.2 8.8 2.2 12 2.2zM12 0C8.7 0 8.3 0 7.1.1 2.7.3.3 2.7.1 7.1 0 8.3 0 8.7 0 12s0 3.7.1 4.9c.2 4.4 2.6 6.8 7 7C8.3 24 8.7 24 12 24s3.7 0 4.9-.1c4.4-.2 6.8-2.6 7-7 .1-1.2.1-1.6.1-4.9s0-3.7-.1-4.9c-.2-4.4-2.6-6.8-7-7C15.7 0 15.3 0 12 0zm0 5.8a6.2 6.2 0 1 0 0 12.4 6.2 6.2 0 0 0 0-12.4zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.4-11.8a1.4 1.4 0 1 0 0 2.9 1.4 1.4 0 0 0 0-2.9z"/></svg>rubi.workshop</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+/* ============================================================
+   IMAGE BASE
+   현재는 몰튼 UK(Shopify CDN) 이미지를 그대로 불러옵니다.
+   assets/ 폴더에 같은 파일명으로 저장한 뒤 아래 한 줄만 바꾸면 됩니다.
+     const IMG_BASE = 'assets/';
+   ============================================================ */
+const IMG_BASE = 'https://www.moultonbicycles.co.uk/cdn/shop/files/';
+
+/* ============================================================
+   MODELS
+   price: 원화 숫자 (예: 38500000). 비워 두면 "가격 문의"로 표시됩니다.
+   from: true 이면 "~부터" 표기. tag: 카드 좌상단 뱃지.
+   series: ns | moulton | am | y | se  (필터용)
+   ============================================================ */
+const MODELS = [
+  {name:'NS D-Pylon',  series:'ns',      label:'New Series',       img:'moulton-ns-double-pylon-stainless.jpg', alt:'moulton-ns-double-pylon-stainless-angle-1.jpg', price:'', from:false, tag:''},
+  {name:'NS Speed',    series:'ns',      label:'New Series',       img:'moulton-ns-speed-stainless.jpg',        alt:'moulton-ns-speed-stainless-angle-1.jpg',        price:'', from:false, tag:''},
+  {name:'NS Rapide',   series:'ns',      label:'New Series',       img:'moulton-ns-rapide-sunrise-orange.jpg',  alt:'moulton-ns-rapide-sunrise-orange-angle-1.jpg',  price:'', from:false, tag:{ko:'신모델',en:'New Model',ja:'新モデル',zh:'新车型'}},
+  {name:'Speed',       series:'moulton', label:'Moulton',          img:'moulton-speed-stainless.jpg',           alt:'moulton-speed-stainless-angle-1.jpg',           price:'', from:false, tag:''},
+  {name:'NS Safari',   series:'ns',      label:'New Series',       img:'moulton-ns-safari-willow-green.jpg',    alt:'moulton-ns-safari-willow-green-angle-1.jpg',    price:'', from:false, tag:''},
+  {name:'NS Marathon', series:'ns',      label:'New Series',       img:'moulton-ns-marathon-stainless-blue-hl.jpg', alt:'moulton-ns-marathon-stainless-blue-hl-angle-1.jpg', price:'', from:true, tag:''},
+  {name:'AM GT',       series:'am',      label:'AM Series',        img:'moulton-gt-mk3-stainless.jpg',          alt:'moulton-gt-mk3-stainless-angle-1.jpg',          price:'', from:true, tag:''},
+  {name:'Jubilee',     series:'am',      label:'AM Series',        img:'moulton-jubilee-ferrari-red.jpg',       alt:'moulton-jubilee-ferrari-red-angle-1.jpg',       price:'', from:false, tag:''},
+  {name:'AM Speed',    series:'am',      label:'AM Series',        img:'moulton-am-speed-white.jpg',            alt:'moulton-am-speed-white-angle-1.jpg',            price:'', from:false, tag:''},
+  {name:'AM 22',       series:'am',      label:'AM Series',        img:'moulton-am-22-steely-grey.jpg',         alt:'moulton-am-22-steely-grey-angle-1.jpg',         price:'', from:false, tag:''},
+  {name:'XTB',         series:'y',       label:'Y-frame',          img:'moulton-xtb-steely-grey.jpg',           alt:'moulton-xtb-steely-grey-angle-1.jpg',           price:'', from:false, tag:''},
+  {name:'SST',         series:'y',       label:'Y-frame',          img:'moulton-sst-airforce-blue-side.jpg',    alt:'moulton-sst-airforce-blue-angle-1.jpg',         price:'', from:true, tag:''},
+  {name:'The Hall SE', series:'se',      label:'Special Edition',  img:'moulton-the-hall-se-hall-green.jpg',    alt:'moulton-the-hall-se-hall-green-angle-1.jpg',    price:'', from:false, tag:{ko:'스페셜 에디션',en:'Special Edition',ja:'スペシャルエディション',zh:'特别版'}},
+  {name:'TSR',         series:'y',       label:'Y-frame',          img:'moulton-tsr-powder-pink.jpg',           alt:'moulton-tsr-powder-pink-angle-1.jpg',           price:'', from:false, tag:''},
+];
+
+const PRESS = [
+  {q:{en:"You'd probably get off the Moulton Double-Pylon and think you've just ridden one of the best all-round, do-anything bicycles in the world!", ko:"더블 파일런에서 내리면 아마 이렇게 생각할 겁니다. 방금 세계에서 가장 만능인 자전거 중 하나를 탔다고.", ja:"ダブルパイロンから降りたとき、きっとこう思うでしょう。世界で最も万能な自転車の一台に乗ったのだと。", zh:"从 Double-Pylon 上下来时，你大概会想：刚刚骑的是世界上最全能的自行车之一。"}, logo:'bike-radar-logo-small.png', name:'BikeRadar'},
+  {q:{en:"The attention to detail is amazing, the craftsmanship is exquisite, and the performance is wonderful.", ko:"디테일은 놀랍고, 만듦새는 정교하며, 성능은 훌륭합니다.", ja:"ディテールは驚くほど、仕上げは精緻で、性能は素晴らしい。", zh:"细节惊人，做工精湛，性能出色。"}, logo:'cycling-plus-logo-small.png', name:'Cycling Plus'},
+  {q:{en:"The best things come in small packages. We've not had so much two-wheeled fun in years!", ko:"좋은 것은 작은 꾸러미에 담겨 옵니다. 두 바퀴로 이렇게 즐거웠던 적은 몇 년 만입니다.", ja:"良いものは小さな包みに入ってくる。二輪でこれほど楽しんだのは何年ぶりだろう。", zh:"好东西总是小巧玲珑。多年来没有在两个轮子上玩得这么开心了。"}, logo:'cycling-today-logo-small.png', name:'Cycling Today'},
+  {q:{en:"It's like riding a finely-tuned instrument.", ko:"정교하게 조율된 악기를 타는 것 같습니다.", ja:"精巧に調律された楽器に乗っているようだ。", zh:"就像骑着一件精心调校的乐器。"}, logo:'velo-vision-logo-small.png', name:'Velo Vision'},
+];
+
+/* ===== helpers ===== */
+const $=(s,c=document)=>c.querySelector(s), $$=(s,c=document)=>[...c.querySelectorAll(s)];
+const LANGS=['ko','en','ja','zh'];
+const nl=(navigator.language||'en').toLowerCase();
+let LANG = localStorage.getItem('mk-lang') || (nl.startsWith('ko')?'ko':nl.startsWith('ja')?'ja':nl.startsWith('zh')?'zh':'en');
+if(!LANGS.includes(LANG)) LANG='en';
+const won = n => '₩' + Number(n).toLocaleString('ko-KR');
+
+/* ===== images ===== */
+$$('img[data-src]').forEach(img=>{ img.src = IMG_BASE + img.dataset.src; });
+
+/* ===== language ===== */
+function applyLang(){
+  document.documentElement.lang = LANG;
+  $$('[data-ko]').forEach(el=>{ el.innerHTML = el.dataset[LANG] ?? el.dataset.ko; });
+  $$('.lang button').forEach(b=>b.classList.toggle('on', b.dataset.lang===LANG));
+  document.title = {ko:'몰튼 바이시클 코리아 | Moulton Bicycles Korea', en:'Moulton Bicycles Korea | Innovative British Bicycle Design', ja:'モールトン・バイシクル・コリア | Moulton Bicycles Korea', zh:'莫尔顿自行车韩国 | Moulton Bicycles Korea'}[LANG];
+  renderGrid(); renderPress(pressIdx, true);
+}
+$$('.lang button').forEach(b=>b.addEventListener('click',()=>{ LANG=b.dataset.lang; localStorage.setItem('mk-lang',LANG); applyLang(); }));
+
+/* ===== mobile nav ===== */
+const burger=$('.burger'), mnav=$('.mnav');
+burger.addEventListener('click',()=>{ const o=mnav.classList.toggle('open'); burger.classList.toggle('open',o); burger.setAttribute('aria-expanded',o); document.body.style.overflow=o?'hidden':''; });
+$$('.mnav a').forEach(a=>a.addEventListener('click',()=>{ mnav.classList.remove('open'); burger.classList.remove('open'); document.body.style.overflow=''; }));
+
+/* ===== bikes grid ===== */
+let FILTER='all';
+function renderGrid(){
+  const g=$('#grid'); g.innerHTML='';
+  MODELS.forEach(m=>{
+    const a=document.createElement('a');
+    a.className='card'+(FILTER!=='all'&&m.series!==FILTER?' hide':'');
+    a.href='https://rubiworkshop.com/models'; a.target='_blank'; a.rel='noopener';
+    const FROM={ko:w=>w+' 부터', en:w=>'From '+w, ja:w=>w+'〜', zh:w=>w+' 起'};
+    const ASK={ko:'가격 문의', en:'Price on request', ja:'価格はお問い合わせください', zh:'价格请咨询'};
+    const priceTxt = m.price ? (m.from ? FROM[LANG](won(m.price)) : won(m.price)) : ASK[LANG];
+    a.innerHTML = `
+      <div class="card__img">
+        ${m.tag?`<span class="card__tag">${m.tag[LANG]}</span>`:''}
+        <img class="main" src="${IMG_BASE+m.img}" alt="Moulton ${m.name}" loading="lazy">
+        <img class="alt"  src="${IMG_BASE+m.alt}" alt="" loading="lazy">
+      </div>
+      <div class="card__body">
+        <div><div class="card__name">${m.name}</div><span class="card__series">${m.label}</span></div>
+        <div class="card__price${m.price?'':' ask'}">${priceTxt}</div>
+      </div>`;
+    g.appendChild(a);
+  });
+}
+$$('.filters button').forEach(b=>b.addEventListener('click',()=>{ FILTER=b.dataset.f; $$('.filters button').forEach(x=>x.classList.toggle('on',x===b)); renderGrid(); }));
+
+/* ===== press rotator ===== */
+let pressIdx=0, pressTimer;
+function renderPress(i, instant){
+  pressIdx=i;
+  const q=$('#pressQ');
+  const set=()=>{ q.textContent='“'+PRESS[i].q[LANG]+'”'; q.classList.remove('fade'); };
+  if(instant){ set(); } else { q.classList.add('fade'); setTimeout(set,380); }
+  $$('#pressLogos button').forEach((b,k)=>b.classList.toggle('on',k===i));
+}
+(function(){
+  const wrap=$('#pressLogos');
+  PRESS.forEach((p,k)=>{
+    const b=document.createElement('button'); b.type='button'; b.setAttribute('aria-label',p.name);
+    b.innerHTML=`<img src="${IMG_BASE+p.logo}" alt="${p.name}">`;
+    b.addEventListener('click',()=>{ clearInterval(pressTimer); renderPress(k); startPress(); });
+    wrap.appendChild(b);
+  });
+})();
+function startPress(){ pressTimer=setInterval(()=>renderPress((pressIdx+1)%PRESS.length),5500); }
+startPress();
+
+/* ===== before / after ===== */
+(function(){
+  const ba=$('#ba'), after=$('.ba__after',ba), handle=$('.ba__handle',ba), range=$('input',ba);
+  const set=v=>{ after.style.clipPath=`inset(0 0 0 ${v}%)`; handle.style.left=v+'%'; };
+  range.addEventListener('input',e=>set(e.target.value));
+  set(50);
+})();
+
+/* ===== reveal on scroll ===== */
+const io=new IntersectionObserver(es=>es.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target);} }),{threshold:.12});
+$$('.rv').forEach(el=>io.observe(el));
+
+applyLang();
+</script>
+</body>
+</html>
