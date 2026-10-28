@@ -11,6 +11,7 @@
 - `about-moulton/index.html` 몰튼 자전거 (/about-moulton). UK 'The Moulton Bike' 번역. 핵심 특징 5개는 `pages/about_moulton.py`의 `FEATURES`
 - `alex-moulton/index.html` 알렉스 몰튼 박사 (/alex-moulton). UK 'Dr Alex Moulton' 번역. 갤러리 14장 `GALLERY`, 연표 `TIMELINE` (자선 신탁 설립은 UK 페이지의 1997 대신 moultontrust.org 기준 1977)
 - `the-hall/index.html` 홀 에스테이트 (/the-hall). UK 'The Hall Estate' 번역. 투어·숙박 링크는 moultontrust.org
+- `racing/index.html` 레이싱 & 기록 (/racing). UK 'Records & Racing' 번역. F-프레임 5건·스페이스프레임 6건은 `pages/racing.py`의 `F_FRAME`/`SPACEFRAME`
 - `authorized-dealer/index.html` 공식 딜러 (/authorized-dealer). 딜러 정보는 `pages/authorized_dealer.py`의 `DEALERS` 목록(상호·지역·주소·전화·스토어 링크·서비스 태그). 쇼룸(루비워크샵) → 프라임 딜러 → 인증 딜러 → 안내 → 딜러 문의(루비서플라이) 순. 재생성: `python3 build.py authorized_dealer`
 
 서브페이지는 `build.py`가 메인의 헤더·푸터·스타일·언어 전환을 그대로 가져와 생성. 본문은 `pages/<slug>.py`에 있고, 고친 뒤 `python3 build.py`로 재생성. 새 페이지는 `pages/`에 같은 형식으로 추가.
