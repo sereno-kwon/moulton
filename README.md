@@ -1,6 +1,9 @@
 # Moulton Bicycles Korea · moultonbicycles.co.kr
 
-몰튼 UK(moultonbicycles.co.uk) 홈페이지 구조를 따른 원페이지 정적 사이트. 단일 `index.html`.
+몰튼 UK(moultonbicycles.co.uk) 홈페이지 구조를 따른 정적 사이트.
+
+- `index.html` 메인 원페이지
+- `suspension/index.html` 서스펜션 페이지 (/suspension). `build_suspension.py`가 메인의 헤더·푸터·스타일을 가져와 생성하므로, 본문은 스크립트의 CONTENT 영역을 고친 뒤 `python3 build_suspension.py`로 재생성.
 
 ## 구조
 1. 상단 티커 (Made in England · Since 1962)
