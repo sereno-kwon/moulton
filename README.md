@@ -5,6 +5,7 @@
 - `index.html` 메인 원페이지
 - `suspension/index.html` 서스펜션 (/suspension)
 - `design/index.html` 디자인의 진화 (/design)
+- `authorized-dealer/index.html` 공식 딜러 (/authorized-dealer). 딜러 정보는 `pages/authorized_dealer.py`의 `DEALERS` 목록(상호·지역·주소·전화·스토어 링크·서비스 태그). 쇼룸(루비워크샵) → 프라임 딜러 → 인증 딜러 → 안내 → 딜러 문의(루비서플라이) 순. 재생성: `python3 build.py authorized_dealer`
 
 서브페이지는 `build.py`가 메인의 헤더·푸터·스타일·언어 전환을 그대로 가져와 생성. 본문은 `pages/<slug>.py`에 있고, 고친 뒤 `python3 build.py`로 재생성. 새 페이지는 `pages/`에 같은 형식으로 추가.
 
