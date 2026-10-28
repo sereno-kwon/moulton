@@ -1,43 +1,15 @@
 # -*- coding: utf-8 -*-
-"""index.html의 헤더·푸터·스타일을 재사용해 suspension/index.html을 생성.
-   본문 내용은 아래 CONTENT 영역만 수정하면 됨.  실행: python3 build_suspension.py"""
-import re, pathlib
+"""/suspension 페이지 본문. build.py가 읽어 suspension/index.html 생성."""
+from build import t
 
-root = pathlib.Path(__file__).parent
-src = (root / 'index.html').read_text(encoding='utf-8')
+SLUG = 'suspension'
+TITLE_KO = '몰튼 서스펜션 | Moulton Bicycles Korea'
+TITLES_JS = "{ko:'몰튼 서스펜션 | Moulton Bicycles Korea', en:'Moulton Suspension | Moulton Bicycles Korea', ja:'モールトンのサスペンション | Moulton Bicycles Korea', zh:'莫尔顿避震系统 | Moulton Bicycles Korea'}"
+DESCRIPTION = '하이드로라스틱, 모노스피어, 리딩 링크, 플렉시터. 알렉스 몰튼 박사의 자동차 서스펜션 연구에서 비롯된 몰튼 서스펜션의 원리와 네 가지 시스템.'
+OG_TITLE = 'Moulton Suspension | Moulton Bicycles Korea'
+OG_DESC = 'Comfort without compromise. The four Moulton suspension systems explained.'
 
-def between(s, a, b):
-    i = s.index(a); j = s.index(b, i)
-    return s[i:j]
-
-head_links = between(src, '<link rel="preconnect"', '<style>')
-style = between(src, '<style>', '</style>') + '</style>'
-ticker = between(src, '<!-- ===== TICKER ===== -->', '<!-- ===== HEADER ===== -->')
-header = between(src, '<!-- ===== HEADER ===== -->', '<main id="top">')
-footer = between(src, '<!-- ===== FOOTER ===== -->', '<script>')
-js_head = between(src, "const IMG_BASE = 'https://", "/* ===== bikes grid ===== */")
-js_head = re.sub(r"/\* =+\n   MODELS.*?=+ \*/\n", "", js_head, flags=re.S)
-js_reveal = between(src, "/* ===== reveal on scroll ===== */", "applyLang();")
-
-# 서브페이지에서는 메인 앵커를 /#... 로
-for blk in ('header',):
-    pass
-header = header.replace('href="#bikes"', 'href="/#bikes"').replace('href="#moulton"', 'href="/#moulton"') \
-               .replace('href="#history"', 'href="/#history"').replace('href="#buy"', 'href="/#buy"') \
-               .replace('href="#top"', 'href="/"')
-# 푸터 서스펜션 링크는 현재 페이지
-footer = footer.replace('href="https://www.moultonbicycles.co.uk/pages/moulton-suspension" target="_blank" rel="noopener"', 'href="/suspension/"')
-
-# applyLang에서 메인 전용 renderGrid/renderPress 제거, 타이틀 교체
-js_head = js_head.replace("  renderGrid(); renderPress(pressIdx, true);\n", "")
-js_head = re.sub(r"document\.title = \{[^\n]*\}\[LANG\];",
-  "document.title = {ko:'몰튼 서스펜션 | Moulton Bicycles Korea', en:'Moulton Suspension | Moulton Bicycles Korea', ja:'モールトンのサスペンション | Moulton Bicycles Korea', zh:'莫尔顿避震系统 | Moulton Bicycles Korea'}[LANG];", js_head)
-# MODELS/PRESS 배열은 서브페이지에 불필요
-js_head = re.sub(r"const MODELS = \[.*?\n\];\n", "", js_head, flags=re.S)
-js_head = re.sub(r"const PRESS = \[.*?\n\];\n", "", js_head, flags=re.S)
-
-sub_css = """
-<style>
+CSS = """
 /* ===== Suspension page ===== */
 .phero{position:relative;height:min(78vh,760px);min-height:460px;overflow:hidden;background:#161616}
 .phero img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center}
@@ -91,14 +63,10 @@ html[lang="ko"] .lede h2,html[lang="ja"] .lede h2,html[lang="zh"] .lede h2{font-
   .spec li{grid-template-columns:110px 1fr}
 }
 @media (max-width:560px){.lede .stat{grid-template-columns:1fr 1fr}.phero{height:70vh}}
-</style>"""
+"""
 
-# ===================== CONTENT =====================
-def t(ko, en, ja, zh):
-    esc = lambda s: s.replace('"', '&quot;')
-    return f'data-ko="{esc(ko)}" data-en="{esc(en)}" data-ja="{esc(ja)}" data-zh="{esc(zh)}"'
-
-main = f"""
+def main():
+    return f"""
 <main id="top">
 
 <section class="phero">
@@ -264,34 +232,3 @@ main = f"""
 
 </main>
 """
-# ===================== /CONTENT =====================
-
-page = f"""<!DOCTYPE html>
-<html lang="ko">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>몰튼 서스펜션 | Moulton Bicycles Korea</title>
-<meta name="description" content="하이드로라스틱, 모노스피어, 리딩 링크, 플렉시터. 알렉스 몰튼 박사의 자동차 서스펜션 연구에서 비롯된 몰튼 서스펜션의 원리와 네 가지 시스템.">
-<meta property="og:title" content="Moulton Suspension | Moulton Bicycles Korea">
-<meta property="og:description" content="Comfort without compromise. The four Moulton suspension systems explained.">
-<meta property="og:type" content="article">
-<meta property="og:url" content="https://moultonbicycles.co.kr/suspension/">
-<link rel="canonical" href="https://moultonbicycles.co.kr/suspension/">
-{head_links}{style}
-{sub_css}
-</head>
-<body>
-
-{ticker}{header}{main}
-{footer}<script>
-{js_head}
-{js_reveal}applyLang();
-</script>
-</body>
-</html>
-"""
-out = root / 'suspension' / 'index.html'
-out.parent.mkdir(exist_ok=True)
-out.write_text(page, encoding='utf-8')
-print('written', out, len(page), 'bytes')

@@ -3,7 +3,10 @@
 몰튼 UK(moultonbicycles.co.uk) 홈페이지 구조를 따른 정적 사이트.
 
 - `index.html` 메인 원페이지
-- `suspension/index.html` 서스펜션 페이지 (/suspension). `build_suspension.py`가 메인의 헤더·푸터·스타일을 가져와 생성하므로, 본문은 스크립트의 CONTENT 영역을 고친 뒤 `python3 build_suspension.py`로 재생성.
+- `suspension/index.html` 서스펜션 (/suspension)
+- `design/index.html` 디자인의 진화 (/design)
+
+서브페이지는 `build.py`가 메인의 헤더·푸터·스타일·언어 전환을 그대로 가져와 생성. 본문은 `pages/<slug>.py`에 있고, 고친 뒤 `python3 build.py`로 재생성. 새 페이지는 `pages/`에 같은 형식으로 추가.
 
 ## 구조
 1. 상단 티커 (Made in England · Since 1962)
