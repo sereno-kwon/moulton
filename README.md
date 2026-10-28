@@ -5,6 +5,9 @@
 - `index.html` 메인 원페이지
 - `suspension/index.html` 서스펜션 (/suspension)
 - `design/index.html` 디자인의 진화 (/design)
+- `colors/index.html` 컬러 & 피니시 (/colors). UK 'Colours' 페이지 번역. 파우더 코트 15색·스토브 에나멜 15색은 `pages/colors.py`의 `POWDER`/`ENAMEL` 목록, 스와치 이미지는 UK CDN `moulton-bike-colour-<slug>.jpg`
+- `sizing/index.html` 사이징 가이드 (/sizing). UK 'Sizing' 페이지 번역. 모델별 인사이드 레그는 `pages/sizing.py`의 `SIZES`(인치, cm 자동 환산)
+- `faq/index.html` 자주 묻는 질문 (/faq). UK FAQ 중 영국 전용 항목(영국 배송·VAT·반품·Cycle to Work·쿠키) 제외, 구매·납기·보증은 루비컴퍼니 기준으로 재작성. 질문은 `pages/faq.py`의 `FAQ` 목록(카테고리 3개)
 - `authorized-dealer/index.html` 공식 딜러 (/authorized-dealer). 딜러 정보는 `pages/authorized_dealer.py`의 `DEALERS` 목록(상호·지역·주소·전화·스토어 링크·서비스 태그). 쇼룸(루비워크샵) → 프라임 딜러 → 인증 딜러 → 안내 → 딜러 문의(루비서플라이) 순. 재생성: `python3 build.py authorized_dealer`
 
 서브페이지는 `build.py`가 메인의 헤더·푸터·스타일·언어 전환을 그대로 가져와 생성. 본문은 `pages/<slug>.py`에 있고, 고친 뒤 `python3 build.py`로 재생성. 새 페이지는 `pages/`에 같은 형식으로 추가.

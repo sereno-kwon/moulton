@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>몰튼 사이징 가이드 | Moulton Bicycles Korea</title>
+<meta name="description" content="몰튼은 하나의 프레임 사이즈로 신장 160~193cm 라이더에 맞춰 설계됩니다. 모델별 인사이드 레그 범위와 사이즈 선택 안내.">
+<meta property="og:title" content="Sizing Guide | Moulton Bicycles Korea">
+<meta property="og:description" content="One size fits most. Inside leg length guide for every Moulton model.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://moultonbicycles.co.kr/sizing/">
+<link rel="canonical" href="https://moultonbicycles.co.kr/sizing/">
+<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;600&family=Noto+Sans+SC:wght@300;400;500;600&display=swap">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+<style>
+/* ===== Fonts ===== */
+@font-face{font-family:'S-CoreDream';font-weight:300;font-style:normal;src:url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-3Light.woff') format('woff');font-display:swap}
+@font-face{font-family:'S-CoreDream';font-weight:500;font-style:normal;src:url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-5Medium.woff') format('woff');font-display:swap}
+@font-face{font-family:'S-CoreDream';font-weight:600;font-style:normal;src:url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-6Bold.woff') format('woff');font-display:swap}
+
+/* ===== Tokens ===== */
+:root{
+  --bg:#ffffff;
+  --bg-soft:#f4f3f0;
+  --ink:#121212;
+  --ink-2:#4a4a4a;
+  --ink-3:#8a8a8a;
+  --line:#e3e1dc;
+  --red:#c8102e;
+  --red-dark:#a30d26;
+  --max:1360px;
+  --gutter:clamp(16px,4vw,56px);
+  --en:'Pretendard Variable',Pretendard,-apple-system,BlinkMacSystemFont,system-ui,'Helvetica Neue',Arial,sans-serif;
+  --ko:'S-CoreDream','Pretendard Variable',Pretendard,-apple-system,system-ui,sans-serif;
+  --ja:'Pretendard Variable','Noto Sans JP',-apple-system,'Hiragino Sans','Hiragino Kaku Gothic ProN',system-ui,sans-serif;
+  --zh:'Pretendard Variable','Noto Sans SC',-apple-system,'PingFang SC','Microsoft YaHei',system-ui,sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{background:var(--bg);color:var(--ink);font-family:var(--en);font-weight:400;line-height:1.6;letter-spacing:-0.005em;overflow-x:hidden}
+html[lang="ko"] body{font-family:var(--ko);font-weight:300;letter-spacing:-0.01em}
+html[lang="ja"] body{font-family:var(--ja);font-weight:400;letter-spacing:0}
+html[lang="zh"] body{font-family:var(--zh);font-weight:400;letter-spacing:0}
+html[lang="ja"] h2,html[lang="ja"] h3{font-family:var(--ja);font-weight:500;letter-spacing:0}
+html[lang="zh"] h2,html[lang="zh"] h3{font-family:var(--zh);font-weight:500;letter-spacing:0}
+img{display:block;max-width:100%;height:auto}
+a{color:inherit;text-decoration:none}
+button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
+.wrap{max-width:var(--max);margin:0 auto;padding:0 var(--gutter)}
+.eyebrow{font-family:var(--en);font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--red);font-weight:600;margin-bottom:14px}
+h1,h2,h3{font-family:var(--en);font-weight:600;line-height:1.12;letter-spacing:-0.02em}
+html[lang="ko"] h2,html[lang="ko"] h3{font-family:var(--ko);font-weight:500;letter-spacing:-0.02em}
+h2{font-size:clamp(28px,3.6vw,46px)}
+h3{font-size:clamp(22px,2.4vw,30px)}
+p{color:var(--ink-2);font-size:clamp(15px,1.1vw,17px);max-width:60ch}
+.btn{display:inline-flex;align-items:center;gap:10px;font-family:var(--en);font-size:13px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;padding:14px 26px;border:1px solid var(--ink);color:var(--ink);transition:background .25s,color .25s,border-color .25s}
+.btn:hover{background:var(--ink);color:#fff}
+.btn.light{border-color:#fff;color:#fff}
+.btn.light:hover{background:#fff;color:var(--ink)}
+.btn.red{background:var(--red);border-color:var(--red);color:#fff}
+.btn.red:hover{background:var(--red-dark);border-color:var(--red-dark)}
+.link{font-family:var(--en);font-size:13px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;border-bottom:1px solid currentColor;padding-bottom:3px}
+.link:after{content:"\2192";margin-left:8px}
+
+/* ===== Top ticker ===== */
+.ticker{background:var(--ink);color:#fff;font-family:var(--en);font-size:11px;letter-spacing:.28em;text-transform:uppercase;overflow:hidden;height:34px;display:flex;align-items:center}
+.ticker__track{display:flex;white-space:nowrap;animation:ticker 40s linear infinite;will-change:transform}
+.ticker__track span{padding:0 48px}
+.ticker__track span:before{content:"\25CF";font-size:6px;vertical-align:middle;margin-right:48px;color:var(--red)}
+@keyframes ticker{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+
+/* ===== Header ===== */
+.header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.92);backdrop-filter:saturate(180%) blur(12px);-webkit-backdrop-filter:saturate(180%) blur(12px);border-bottom:1px solid var(--line)}
+.header__in{display:flex;align-items:center;justify-content:space-between;height:72px;gap:24px}
+.logo img{height:26px;width:auto}
+.nav{display:flex;gap:34px;font-family:var(--en);font-size:12px;font-weight:600;letter-spacing:.16em;text-transform:uppercase}
+.nav a{position:relative;padding:6px 0}
+.nav a:after{content:"";position:absolute;left:0;bottom:0;height:1px;width:0;background:var(--red);transition:width .25s}
+.nav a:hover:after{width:100%}
+.header__right{display:flex;align-items:center;gap:18px}
+.lang{display:flex;border:1px solid var(--line);font-family:var(--en);font-size:11px;font-weight:600;letter-spacing:.1em}
+.lang button{padding:7px 12px;color:var(--ink-3)}
+.lang button.on{background:var(--ink);color:#fff}
+.burger{display:none;width:40px;height:40px;position:relative}
+.burger span{position:absolute;left:10px;right:10px;height:1.5px;background:var(--ink);transition:.25s}
+.burger span:nth-child(1){top:14px}.burger span:nth-child(2){top:20px}.burger span:nth-child(3){top:26px}
+.burger.open span:nth-child(1){top:20px;transform:rotate(45deg)}
+.burger.open span:nth-child(2){opacity:0}
+.burger.open span:nth-child(3){top:20px;transform:rotate(-45deg)}
+.mnav{display:none;position:fixed;inset:72px 0 0;background:#fff;z-index:49;padding:32px var(--gutter);flex-direction:column;gap:6px}
+.mnav.open{display:flex}
+.mnav a{font-family:var(--en);font-size:28px;font-weight:600;letter-spacing:-.01em;padding:12px 0;border-bottom:1px solid var(--line)}
+.mnav small{display:block;font-size:12px;letter-spacing:.2em;color:var(--ink-3);margin-top:28px;text-transform:uppercase}
+
+/* ===== Hero ===== */
+.hero{position:relative;height:min(92vh,900px);min-height:520px;overflow:hidden;background:#1a1a1a}
+.hero img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:68% center}
+.hero:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(0,0,0,.72) 0%,rgba(0,0,0,.45) 38%,rgba(0,0,0,0) 68%),linear-gradient(180deg,rgba(0,0,0,.1) 0%,rgba(0,0,0,0) 40%,rgba(0,0,0,.5) 100%)}
+.hero__txt{position:absolute;left:0;right:0;bottom:clamp(40px,8vh,90px);z-index:2;color:#fff}
+.hero__txt .eyebrow{color:#fff;opacity:.85}
+.hero__txt h1{text-shadow:0 2px 24px rgba(0,0,0,.35);font-size:clamp(40px,7vw,96px);line-height:.98;letter-spacing:-.03em;max-width:12ch}
+html[lang="ja"] .hero__txt h1,html[lang="zh"] .hero__txt h1{max-width:none;letter-spacing:0;line-height:1.1;word-break:keep-all;white-space:nowrap}
+html[lang="ko"] .hero__txt h1{word-break:keep-all}
+.hero__txt h1 em{font-style:normal;font-weight:300}
+.hero__txt p{color:rgba(255,255,255,.82);margin-top:22px;max-width:46ch}
+.hero__txt .btn{margin-top:30px}
+.hero__scroll{position:absolute;right:var(--gutter);bottom:36px;z-index:2;color:#fff;font-family:var(--en);font-size:10px;letter-spacing:.3em;text-transform:uppercase;writing-mode:vertical-rl;opacity:.7}
+
+/* ===== Intro ===== */
+.intro{padding:clamp(72px,10vw,140px) 0;text-align:center}
+.intro img{height:52px;margin:0 auto 36px;width:auto}
+.intro h2{font-family:var(--en);font-weight:300;font-size:clamp(30px,4.6vw,62px);letter-spacing:.06em;text-transform:uppercase}
+.intro p{margin:28px auto 0;max-width:62ch;font-size:clamp(16px,1.25vw,19px)}
+
+/* ===== Banner (NS Rapide / Adventures) ===== */
+.banner{position:relative;height:min(80vh,760px);min-height:440px;overflow:hidden;background:#222}
+.banner img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.banner:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(0,0,0,.5) 0%,rgba(0,0,0,.1) 60%)}
+.banner__txt{position:absolute;inset:0;z-index:2;display:flex;flex-direction:column;justify-content:center;color:#fff}
+.banner__txt .eyebrow{color:#fff;opacity:.85}
+.banner__txt h2{font-size:clamp(40px,6vw,84px);line-height:1;letter-spacing:-.02em}
+.banner__txt h2 em{font-style:italic;font-weight:300}
+.banner__txt p{color:rgba(255,255,255,.85);margin-top:18px}
+.banner__txt .btn{margin-top:30px;align-self:flex-start}
+.banner.right .banner__txt .btn{align-self:flex-end}
+.banner.right .banner__txt{align-items:flex-end;text-align:right}
+.banner.right:after{background:linear-gradient(270deg,rgba(0,0,0,.5) 0%,rgba(0,0,0,.1) 60%)}
+.banner blockquote{font-family:var(--en);font-weight:300;font-size:clamp(26px,3.6vw,50px);line-height:1.15;letter-spacing:-.02em;max-width:18ch;margin-top:6px}
+.banner cite{display:block;font-style:normal;font-family:var(--en);font-size:12px;letter-spacing:.2em;text-transform:uppercase;margin-top:20px;opacity:.75}
+
+/* ===== Feature rows ===== */
+.features{padding:clamp(40px,6vw,80px) 0 0}
+.feat{display:grid;grid-template-columns:1fr 1fr;align-items:center;gap:clamp(32px,6vw,96px);padding:clamp(40px,6vw,88px) 0;border-top:1px solid var(--line)}
+.feat:first-child{border-top:0}
+.feat__img{position:relative;overflow:hidden;aspect-ratio:4/3;background:var(--bg-soft)}
+.feat__img img{width:100%;height:100%;object-fit:cover;transition:transform 1.2s cubic-bezier(.2,.7,.2,1)}
+.feat:hover .feat__img img{transform:scale(1.04)}
+.feat:nth-child(even) .feat__img{order:2}
+.feat__txt h2{margin-bottom:20px}
+.feat__txt p{margin-bottom:28px}
+
+/* ===== One bike / before-after ===== */
+.onebike{background:var(--bg-soft);padding:clamp(72px,9vw,130px) 0}
+.onebike__head{text-align:center;margin-bottom:clamp(36px,5vw,64px)}
+.onebike__head h2{font-family:var(--en);font-weight:300;font-size:clamp(30px,4.4vw,60px);letter-spacing:-.02em}
+.onebike__head p{margin:22px auto 30px}
+.ba{position:relative;width:100%;aspect-ratio:16/9;overflow:hidden;background:#e9e8e4;user-select:none;cursor:ew-resize}
+.ba img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.ba__after{clip-path:inset(0 0 0 50%)}
+.ba__handle{position:absolute;top:0;bottom:0;left:50%;width:2px;background:#fff;box-shadow:0 0 0 1px rgba(0,0,0,.15);transform:translateX(-1px);pointer-events:none}
+.ba__handle:before{content:"\2190 \2192";position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:48px;height:48px;border-radius:50%;background:#fff;color:var(--ink);display:flex;align-items:center;justify-content:center;font-family:var(--en);font-size:12px;letter-spacing:.05em;box-shadow:0 2px 12px rgba(0,0,0,.2)}
+.ba__label{position:absolute;bottom:16px;font-family:var(--en);font-size:11px;letter-spacing:.2em;text-transform:uppercase;background:rgba(255,255,255,.85);padding:6px 12px;color:var(--ink)}
+.ba__label.l{left:16px}.ba__label.r{right:16px}
+.ba input{position:absolute;inset:0;width:100%;height:100%;opacity:0;cursor:ew-resize;margin:0}
+
+/* ===== Bikes grid ===== */
+.bikes{padding:clamp(72px,9vw,130px) 0}
+.bikes__head{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:end;margin-bottom:clamp(36px,5vw,60px)}
+.bikes__head p{max-width:56ch}
+.filters{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:34px}
+.filters button{font-family:var(--en);font-size:11px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;padding:9px 16px;border:1px solid var(--line);color:var(--ink-2);transition:.2s}
+.filters button:hover{border-color:var(--ink)}
+.filters button.on{background:var(--ink);border-color:var(--ink);color:#fff}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:40px 28px}
+.card{display:block;position:relative}
+.card.hide{display:none}
+.card__img{position:relative;aspect-ratio:1/1;background:var(--bg-soft);overflow:hidden}
+.card__img img{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;padding:8%;transition:opacity .4s}
+.card__img img.alt{opacity:0}
+.card:hover .card__img img.main{opacity:0}
+.card:hover .card__img img.alt{opacity:1}
+.card__tag{position:absolute;top:14px;left:14px;z-index:2;font-family:var(--en);font-size:10px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;background:var(--red);color:#fff;padding:5px 9px}
+.card__body{padding:18px 2px 0;display:flex;justify-content:space-between;align-items:baseline;gap:12px}
+.card__name{font-family:var(--en);font-size:15px;font-weight:600;letter-spacing:.08em;text-transform:uppercase}
+.card__series{font-family:var(--en);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-3);display:block;margin-top:4px}
+.card__price{font-family:var(--en);font-size:14px;color:var(--ink-2);white-space:nowrap;font-variant-numeric:tabular-nums}
+.card__price.ask{color:var(--ink-3);font-size:12px;letter-spacing:.08em}
+.bikes__foot{margin-top:40px;display:flex;justify-content:center;gap:14px;flex-wrap:wrap}
+.bikes__note{text-align:center;font-size:12px;color:var(--ink-3);margin-top:22px;max-width:none}
+
+/* ===== Where to buy ===== */
+.buy{background:var(--ink);color:#fff;padding:clamp(72px,9vw,130px) 0}
+.buy h2{text-align:center;margin-bottom:clamp(40px,6vw,72px)}
+.buy__grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:rgba(255,255,255,.12)}
+.buy__item{background:var(--ink);padding:36px 28px 40px;display:flex;flex-direction:column;min-height:300px}
+.buy__item h3{font-size:18px;letter-spacing:.06em;text-transform:uppercase;margin-bottom:16px}
+.buy__item p{color:rgba(255,255,255,.72);flex:1;font-size:14.5px}
+.buy__item .link{align-self:flex-start;margin-top:26px}
+.buy__num{font-family:var(--en);font-size:11px;letter-spacing:.22em;color:var(--red);margin-bottom:22px}
+
+/* ===== Stories ===== */
+.stories{padding:clamp(72px,9vw,130px) 0}
+.stories__head{display:flex;justify-content:space-between;align-items:end;margin-bottom:clamp(32px,4vw,52px)}
+.stories__grid{display:grid;grid-template-columns:1fr 1fr;gap:28px}
+.story{display:block;border-top:1px solid var(--ink);padding-top:22px}
+.story__img{aspect-ratio:16/10;overflow:hidden;background:var(--bg-soft);margin-bottom:20px}
+.story__img img{width:100%;height:100%;object-fit:cover;transition:transform 1s cubic-bezier(.2,.7,.2,1)}
+.story:hover .story__img img{transform:scale(1.04)}
+.story__meta{font-family:var(--en);font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--ink-3);margin-bottom:10px}
+.story h3{margin-bottom:8px}
+.story p{font-size:15px}
+
+/* ===== Press ===== */
+.press{background:var(--bg-soft);padding:clamp(64px,8vw,110px) 0;text-align:center}
+.press .eyebrow{margin-bottom:28px}
+.press__q{font-family:var(--en);font-weight:300;font-size:clamp(22px,2.8vw,38px);line-height:1.25;letter-spacing:-.02em;max-width:26ch;margin:0 auto;min-height:3.8em;display:flex;align-items:center;justify-content:center;transition:opacity .4s}
+.press__q.fade{opacity:0}
+.press__logos{display:flex;justify-content:center;gap:clamp(20px,4vw,56px);margin-top:40px;flex-wrap:wrap}
+.press__logos button{opacity:.3;transition:opacity .25s;padding:6px}
+.press__logos button.on,.press__logos button:hover{opacity:1}
+.press__logos img{height:22px;width:auto;filter:grayscale(1)}
+
+/* ===== Footer ===== */
+.footer{border-top:1px solid var(--line);padding:clamp(56px,7vw,90px) 0 40px;font-size:14px}
+.footer__grid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:40px}
+.footer h4{font-family:var(--en);font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--ink-3);margin-bottom:18px;font-weight:600}
+.footer ul{list-style:none}
+.footer li{margin-bottom:9px}
+.footer li a:hover{color:var(--red)}
+.footer__about img{height:46px;width:auto;margin-bottom:22px}
+.footer__about p{font-size:14px;max-width:38ch;margin-bottom:16px}
+.footer__about small{display:block;color:var(--ink-3);font-size:12.5px;line-height:1.7}
+.footer__bot{display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap;margin-top:56px;padding-top:24px;border-top:1px solid var(--line);font-family:var(--en);font-size:12px;color:var(--ink-3);letter-spacing:.02em}
+.footer__social{display:flex;gap:18px}
+.footer__social a{display:inline-flex;align-items:center;gap:6px}
+.footer__social svg{width:16px;height:16px;fill:currentColor}
+
+/* ===== Reveal ===== */
+.rv{opacity:0;transform:translateY(22px);transition:opacity .8s ease,transform .8s cubic-bezier(.2,.7,.2,1)}
+.rv.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){.rv{opacity:1;transform:none;transition:none}.ticker__track{animation:none}}
+
+/* ===== Responsive ===== */
+@media (max-width:1024px){
+  .grid{grid-template-columns:repeat(2,1fr)}
+  .buy__grid{grid-template-columns:repeat(2,1fr)}
+  .footer__grid{grid-template-columns:1fr 1fr}
+}
+@media (max-width:820px){
+  .banner.right .banner__txt .btn{align-self:flex-start}
+  .nav{display:none}
+  .burger{display:block}
+  .feat{grid-template-columns:1fr;gap:24px}
+  .feat:nth-child(even) .feat__img{order:0}
+  .bikes__head{grid-template-columns:1fr;gap:16px}
+  .stories__grid{grid-template-columns:1fr}
+  .stories__head{flex-direction:column;align-items:flex-start;gap:14px}
+  .banner.right .banner__txt{align-items:flex-start;text-align:left}
+  .banner.right:after{background:linear-gradient(90deg,rgba(0,0,0,.5) 0%,rgba(0,0,0,.1) 60%)}
+  .ba{aspect-ratio:4/3}
+}
+@media (max-width:560px){
+  .hero img{object-position:62% center}
+  .grid{grid-template-columns:1fr;gap:32px}
+  .buy__grid{grid-template-columns:1fr}
+  .buy__item{min-height:0}
+  .footer__grid{grid-template-columns:1fr;gap:32px}
+  .hero{height:78vh}
+  .hero__scroll{display:none}
+  .card__body{flex-direction:column;gap:6px}
+}
+</style>
+<style>
+/* ===== Sizing page ===== */
+.eyebrow{font-size:14px;letter-spacing:.18em;margin-bottom:16px}
+.phero{position:relative;height:min(78vh,760px);min-height:460px;overflow:hidden;background:#161616}
+.phero img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center}
+.phero:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(0,0,0,.7) 0%,rgba(0,0,0,.35) 45%,rgba(0,0,0,.05) 75%),linear-gradient(180deg,rgba(0,0,0,0) 50%,rgba(0,0,0,.5) 100%)}
+.phero__txt{position:absolute;left:0;right:0;bottom:clamp(40px,8vh,80px);z-index:2;color:#fff}
+.phero__txt .eyebrow{color:#fff;opacity:.85;font-size:15px;margin-bottom:22px}
+.phero__txt h1{font-size:clamp(36px,6vw,84px);line-height:1;letter-spacing:-.03em;text-shadow:0 2px 24px rgba(0,0,0,.35)}
+html[lang="ko"] .phero__txt h1{font-family:var(--ko);font-weight:500;word-break:keep-all}
+html[lang="ja"] .phero__txt h1,html[lang="zh"] .phero__txt h1{letter-spacing:0;line-height:1.1}
+.phero__txt p{color:rgba(255,255,255,.85);margin-top:20px;max-width:52ch}
+
+.lede{padding:clamp(64px,8vw,110px) 0}
+.lede__grid{display:grid;grid-template-columns:1fr 1.2fr;gap:clamp(32px,6vw,96px);align-items:start}
+.lede h2{font-family:var(--en);font-weight:300;font-size:clamp(28px,3.6vw,48px);letter-spacing:-.02em}
+html[lang="ko"] .lede h2,html[lang="ja"] .lede h2,html[lang="zh"] .lede h2{font-weight:300}
+.lede p+p{margin-top:16px}
+.lede .stat{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:40px;padding-top:28px;border-top:1px solid var(--line)}
+.lede .stat b{display:block;font-family:var(--en);font-size:clamp(24px,2.6vw,36px);font-weight:600;letter-spacing:-.02em;line-height:1}
+.lede .stat span{display:block;font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-3);margin-top:8px;font-family:var(--en)}
+
+.points{background:var(--bg-soft);padding:clamp(56px,7vw,96px) 0}
+.points__grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line)}
+.pt{background:var(--bg-soft);padding:32px 28px 36px}
+.pt .num{font-family:var(--en);font-size:13px;letter-spacing:.22em;color:var(--red);margin-bottom:18px}
+.pt h3{font-size:19px;margin-bottom:12px}
+.pt p{font-size:14.5px}
+
+/* guide */
+.guide{padding:clamp(64px,8vw,110px) 0}
+.guide__grid{display:grid;grid-template-columns:1fr 1.4fr;gap:clamp(32px,6vw,96px);align-items:start}
+.guide__img{position:relative;aspect-ratio:3/4;overflow:hidden;background:var(--bg-soft)}
+.guide__img img{width:100%;height:100%;object-fit:cover}
+.guide h2{margin-bottom:16px}
+.guide p+p{margin-top:12px}
+.how{margin-top:28px;padding:24px 26px;border:1px solid var(--ink)}
+.how b{display:block;font-family:var(--en);font-size:12px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--red);margin-bottom:10px}
+.how p{font-size:14.5px}
+.tbl{width:100%;border-collapse:collapse;margin-top:36px;font-size:15px}
+.tbl th,.tbl td{text-align:left;padding:14px 0;border-bottom:1px solid var(--line);vertical-align:top}
+.tbl th{font-family:var(--en);font-weight:600;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-3);border-bottom:1px solid var(--ink)}
+.tbl td.m{font-family:var(--en);font-weight:600;letter-spacing:.02em;width:34%}
+.tbl td.m small{display:block;font-weight:400;font-size:12px;color:var(--ink-3);letter-spacing:.08em;margin-top:3px}
+.tbl td.v{font-family:var(--en);font-variant-numeric:tabular-nums}
+.tbl td.v span{display:block;color:var(--ink-3);font-size:13px;margin-top:2px}
+.tbl tr.grp td{padding-top:26px}
+.tbl tr.grp td.m small{color:var(--red)}
+.foot{margin-top:18px;font-size:13px;color:var(--ink-3)}
+
+/* cta */
+.cta{background:var(--ink);color:#fff;padding:clamp(64px,8vw,110px) 0;text-align:center}
+.cta .eyebrow{color:#fff;opacity:.85}
+.cta h2{margin-bottom:16px}
+.cta p{color:rgba(255,255,255,.75);margin:0 auto 32px}
+.cta .btn{margin:6px}
+
+@media (max-width:1024px){.points__grid{grid-template-columns:1fr}}
+@media (max-width:820px){
+  .lede__grid,.guide__grid{grid-template-columns:1fr;gap:28px}
+  .guide__img{aspect-ratio:4/3}
+  .tbl{font-size:14px}
+}
+@media (max-width:560px){.lede .stat{grid-template-columns:1fr 1fr}.phero{height:70vh}.tbl td.m{width:44%}}
+</style>
+</head>
+<body>
+
+<!-- ===== TICKER ===== -->
+<div class="ticker" aria-hidden="true">
+  <div class="ticker__track">
+    <span>Moulton Bicycles</span><span>Made in England</span><span>Since 1962</span><span>Official Korean Importer · Rubi Company</span>
+    <span>Moulton Bicycles</span><span>Made in England</span><span>Since 1962</span><span>Official Korean Importer · Rubi Company</span>
+  </div>
+</div>
+
+<!-- ===== HEADER ===== -->
+<header class="header">
+  <div class="wrap header__in">
+    <a class="logo" href="/" aria-label="Moulton Bicycles Korea">
+      <img data-src="Moulton_M_Logo_Red_280_x_80.png" alt="Moulton Bicycles">
+    </a>
+    <nav class="nav" aria-label="Primary">
+      <a href="/#bikes" data-ko="모델" data-ja="モデル" data-zh="车型" data-en="Bikes">모델</a>
+      <a href="/#moulton" data-ko="몰튼" data-ja="モールトン" data-zh="莫尔顿" data-en="The Moulton">몰튼</a>
+      <a href="/#history" data-ko="헤리티지" data-ja="ヘリテージ" data-zh="传承" data-en="Heritage">헤리티지</a>
+      <a href="/#buy" data-ko="구매 안내" data-ja="購入案内" data-zh="购买指南" data-en="Where to Buy">구매 안내</a>
+      <a href="https://rubiworkshop.com/models" target="_blank" rel="noopener" data-ko="상담" data-ja="ご相談" data-zh="咨询" data-en="Consulting">상담</a>
+    </nav>
+    <div class="header__right">
+      <div class="lang" role="group" aria-label="Language">
+        <button type="button" data-lang="ko" class="on">KO</button>
+        <button type="button" data-lang="en">EN</button>
+        <button type="button" data-lang="ja">JA</button>
+        <button type="button" data-lang="zh">ZH</button>
+      </div>
+      <button class="burger" type="button" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+<nav class="mnav" aria-label="Mobile">
+  <a href="/#bikes" data-ko="모델" data-ja="モデル" data-zh="车型" data-en="Bikes">모델</a>
+  <a href="/#moulton" data-ko="몰튼" data-ja="モールトン" data-zh="莫尔顿" data-en="The Moulton">몰튼</a>
+  <a href="/#history" data-ko="헤리티지" data-ja="ヘリテージ" data-zh="传承" data-en="Heritage">헤리티지</a>
+  <a href="/#buy" data-ko="구매 안내" data-ja="購入案内" data-zh="购买指南" data-en="Where to Buy">구매 안내</a>
+  <a href="https://rubiworkshop.com/models" target="_blank" rel="noopener" data-ko="상담 신청" data-ja="ご相談はこちら" data-zh="预约咨询" data-en="Consulting">상담 신청</a>
+  <small>Moulton Bicycles Korea · Rubi Company</small>
+</nav>
+
+
+<main id="top">
+
+<section class="phero">
+  <img data-src="moulton-ns-safari-bike-frame-close-up-landscape.jpg" alt="Moulton NS Safari frame close-up" fetchpriority="high">
+  <div class="wrap phero__txt">
+    <div class="eyebrow" data-ko="하나의 사이즈, 대부분의 라이더" data-en="One Size Fits Most" data-ja="ワンサイズで、ほとんどのライダーに" data-zh="一个尺寸，适合大多数骑行者">하나의 사이즈, 대부분의 라이더</div>
+    <h1 data-ko="사이징" data-en="Sizing" data-ja="サイジング" data-zh="尺寸">사이징</h1>
+    <p data-ko="몰튼은 정교하게 설계된 하나의 프레임 사이즈로 만들어집니다. 균형 잡힌 지오메트리는 신장 160cm부터 193cm까지의 라이더에게 맞습니다." data-en="Every Moulton is built in one carefully engineered frame size. Its balanced geometry fits riders from 160 to 193 cm (5′3″ to 6′4″)." data-ja="モールトンは、精密に設計された一つのフレームサイズで作られます。バランスの取れたジオメトリーは、身長160cmから193cmのライダーに適合します。" data-zh="莫尔顿采用一种精心设计的车架尺寸。均衡的几何结构适合身高 160 至 193 cm 的骑行者。">몰튼은 정교하게 설계된 하나의 프레임 사이즈로 만들어집니다. 균형 잡힌 지오메트리는 신장 160cm부터 193cm까지의 라이더에게 맞습니다.</p>
+  </div>
+</section>
+
+<section class="lede">
+  <div class="wrap lede__grid rv">
+    <div>
+      <div class="eyebrow">One Size Fits Most</div>
+      <h2 data-ko="사이즈를 고르는 대신, 맞추는 자전거" data-en="A bike you adjust, not a size you choose" data-ja="サイズを選ぶのではなく、合わせる自転車" data-zh="不是选择尺寸，而是调整到合身">사이즈를 고르는 대신, 맞추는 자전거</h2>
+    </div>
+    <div>
+      <p data-ko="몰튼의 낮은 스텝스루 프레임은 타고 내리기를 쉽게 하고, 조절식 스템은 넓은 범위의 핸들바 높이를 제공해 라이더가 자신의 자세를 세밀하게 맞출 수 있습니다." data-en="The low step-through frame makes mounting and dismounting easy, and adjustable stems offer a wide range of handlebar height so riders can fine-tune their position." data-ja="低いステップスルーフレームは乗り降りを容易にし、調整式ステムは幅広いハンドルバー高さを提供するため、ライダーは自分のポジションを細かく調整できます。" data-zh="低跨点车架便于上下车，可调节把立提供宽广的车把高度范围，骑行者可以精细调整自己的姿势。">몰튼의 낮은 스텝스루 프레임은 타고 내리기를 쉽게 하고, 조절식 스템은 넓은 범위의 핸들바 높이를 제공해 라이더가 자신의 자세를 세밀하게 맞출 수 있습니다.</p>
+      <p data-ko="그 결과 폭넓은 체형의 라이더에게 편안함과 제어력, 자신감을 주는 다재다능한 핏이 완성됩니다. 모델마다 핏이 조금씩 다르므로 아래 인사이드 레그 가이드를 참고하세요." data-en="The result is a versatile fit that gives comfort, control and confidence to a broad range of riders. Fit varies slightly between models, so use the inside leg guide below." data-ja="その結果、幅広い体型のライダーに快適さ、コントロール、自信を与える万能なフィットが完成します。モデルごとにフィットが少し異なるため、下の股下ガイドをご参照ください。" data-zh="由此形成适合各种体型骑行者的多用途合身效果，带来舒适、掌控与自信。各车型的合身略有差异，请参考下方的内腿长指南。">그 결과 폭넓은 체형의 라이더에게 편안함과 제어력, 자신감을 주는 다재다능한 핏이 완성됩니다. 모델마다 핏이 조금씩 다르므로 아래 인사이드 레그 가이드를 참고하세요.</p>
+      <div class="stat">
+        <div><b>160–193<small style="font-size:.5em;font-weight:400"> cm</small></b><span data-ko="권장 신장" data-en="Rider Height" data-ja="推奨身長" data-zh="建议身高">권장 신장</span></div>
+        <div><b>1</b><span data-ko="프레임 사이즈" data-en="Frame Size" data-ja="フレームサイズ" data-zh="车架尺寸">프레임 사이즈</span></div>
+        <div><b>120<small style="font-size:.5em;font-weight:400"> kg</small></b><span data-ko="최대 하중" data-en="Max Load" data-ja="最大荷重" data-zh="最大载重">최대 하중</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="points">
+  <div class="wrap">
+    <div class="points__grid rv">
+      <div class="pt">
+        <div class="num">01</div>
+        <h3 data-ko="낮은 스텝스루 프레임" data-en="Low Step-through Frame" data-ja="低いステップスルーフレーム" data-zh="低跨点车架">낮은 스텝스루 프레임</h3>
+        <p data-ko="프레임을 넘어 올라탈 필요가 없어 타고 내리기가 쉽고, 신호 대기나 좁은 길에서도 안정적으로 발을 디딜 수 있습니다." data-en="No need to swing a leg over the frame. Mounting and dismounting is easy, and you can put a foot down with confidence at lights or in tight spaces." data-ja="フレームをまたぐ必要がなく、乗り降りが簡単で、信号待ちや狭い道でも安定して足をつけます。" data-zh="无需跨过车架，上下车轻松，在等红灯或狭窄路段也能稳稳落脚。">프레임을 넘어 올라탈 필요가 없어 타고 내리기가 쉽고, 신호 대기나 좁은 길에서도 안정적으로 발을 디딜 수 있습니다.</p>
+      </div>
+      <div class="pt">
+        <div class="num">02</div>
+        <h3 data-ko="조절식 스템" data-en="Adjustable Stem" data-ja="調整式ステム" data-zh="可调节把立">조절식 스템</h3>
+        <p data-ko="핸들바 높이를 넓은 범위에서 조절할 수 있어, 같은 프레임으로 공격적인 자세부터 편안한 업라이트 자세까지 맞출 수 있습니다." data-en="A wide range of handlebar height adjustment lets the same frame be set up for anything from an aggressive position to a relaxed, upright one." data-ja="ハンドルバーの高さを広い範囲で調整できるため、同じフレームで攻撃的なポジションから快適なアップライトポジションまで対応できます。" data-zh="车把高度可在宽广范围内调节，同一车架既可设置为进取姿势，也可调整为舒适的直立姿势。">핸들바 높이를 넓은 범위에서 조절할 수 있어, 같은 프레임으로 공격적인 자세부터 편안한 업라이트 자세까지 맞출 수 있습니다.</p>
+      </div>
+      <div class="pt">
+        <div class="num">03</div>
+        <h3 data-ko="최대 하중 120kg" data-en="Max Load 120 kg" data-ja="最大荷重 120kg" data-zh="最大载重 120 kg">최대 하중 120kg</h3>
+        <p data-ko="모든 모델의 최대 하중은 라이더와 짐을 합쳐 120kg(264lb)입니다. 투어링 짐을 실을 때도 이 범위 안에서 계획해 주세요." data-en="The maximum load for every model is 120 kg (264 lb), rider plus luggage. Plan touring loads within this limit." data-ja="全モデルの最大荷重は、ライダーと荷物を合わせて120kg（264lb）です。ツーリングの荷物もこの範囲内で計画してください。" data-zh="所有车型的最大载重为骑行者加行李共 120 kg（264 lb）。装载旅行行李时请在此范围内规划。">모든 모델의 최대 하중은 라이더와 짐을 합쳐 120kg(264lb)입니다. 투어링 짐을 실을 때도 이 범위 안에서 계획해 주세요.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="guide" id="inseam">
+  <div class="wrap guide__grid rv">
+    <div class="guide__img">
+      <img data-src="moulton-ns-safari-bike-frame-close-up-portrait.jpg" alt="Moulton NS Safari frame" loading="lazy">
+    </div>
+    <div>
+      <div class="eyebrow" data-ko="인사이드 레그 가이드" data-en="Inside Leg Length Guide" data-ja="股下ガイド" data-zh="内腿长指南">인사이드 레그 가이드</div>
+      <h2 data-ko="모델별 인사이드 레그 범위" data-en="Inside leg range by model" data-ja="モデル別 股下範囲" data-zh="各车型内腿长范围">모델별 인사이드 레그 범위</h2>
+      <p data-ko="프레임 사이즈는 하나지만 모델마다 시트튜브 길이가 달라 맞는 인사이드 레그 범위가 조금씩 다릅니다. 본인의 인사이드 레그를 재어 아래 표에서 확인하세요." data-en="There is one frame size, but seat tube lengths differ between models, so the inside leg range each model suits varies slightly. Measure your inside leg and check the table below." data-ja="フレームサイズは一つですが、モデルごとにシートチューブの長さが異なるため、適合する股下の範囲が少しずつ異なります。ご自身の股下を測り、下の表でご確認ください。" data-zh="车架尺寸只有一种，但各车型座管长度不同，因此适合的内腿长范围略有差异。请测量您的内腿长并对照下表。">프레임 사이즈는 하나지만 모델마다 시트튜브 길이가 달라 맞는 인사이드 레그 범위가 조금씩 다릅니다. 본인의 인사이드 레그를 재어 아래 표에서 확인하세요.</p>
+      <div class="how">
+        <b data-ko="재는 방법" data-en="How to measure" data-ja="測り方" data-zh="测量方法">재는 방법</b>
+        <p data-ko="신발을 벗고 벽에 등을 대고 선 뒤, 발바닥부터 허벅지 안쪽 가장 위(가랑이)까지의 길이를 잽니다. 바지의 안쪽 기장과는 다른 값이니 주의하세요." data-en="Stand against a wall without shoes and measure from the sole of your foot to the inner top of your thigh. Note this is not the same as your trouser inside leg length." data-ja="靴を脱いで壁に背をつけて立ち、足の裏から太ももの内側の一番上（股）までの長さを測ります。ズボンの股下寸法とは異なるのでご注意ください。" data-zh="脱鞋背靠墙站立，从脚底量到大腿内侧最高处（裆部）。请注意这与裤子的内长不同。">신발을 벗고 벽에 등을 대고 선 뒤, 발바닥부터 허벅지 안쪽 가장 위(가랑이)까지의 길이를 잽니다. 바지의 안쪽 기장과는 다른 값이니 주의하세요.</p>
+      </div>
+      <table class="tbl">
+        <thead><tr><th data-ko="모델" data-en="Model" data-ja="モデル" data-zh="车型">모델</th><th data-ko="인사이드 레그" data-en="Inside Leg Length" data-ja="股下" data-zh="内腿长">인사이드 레그</th></tr></thead>
+        <tbody>
+<tr class="grp"><td class="m">NS Speed<small>New Series</small></td><td class="v">28–34.5"<span>71–88 cm</span></td></tr>
+<tr><td class="m">NS D-Pylon<small>New Series</small></td><td class="v">28–34.5"<span>71–88 cm</span></td></tr>
+<tr><td class="m">NS Safari<small>New Series</small></td><td class="v">25–36"<span>64–91 cm</span></td></tr>
+<tr><td class="m">NS Marathon<small>New Series</small></td><td class="v">25–36"<span>64–91 cm</span></td></tr>
+<tr class="grp"><td class="m">Speed<small>Moulton</small></td><td class="v">25–36"<span>64–91 cm</span></td></tr>
+<tr class="grp"><td class="m">Jubilee<small>AM Series</small></td><td class="v">25–36"<span>64–91 cm</span></td></tr>
+<tr><td class="m">AM 22<small data-ko="헤드튜브 10&quot; / 12.5&quot; 선택" data-en="Head tube 10&quot; / 12.5&quot;" data-ja="ヘッドチューブ 10&quot; / 12.5&quot;" data-zh="头管 10&quot; / 12.5&quot;">헤드튜브 10" / 12.5" 선택</small></td><td class="v">25–36"<span>64–91 cm</span></td></tr>
+<tr><td class="m">AM GT<small>AM Series</small></td><td class="v">25–36"<span>64–91 cm</span></td></tr>
+<tr><td class="m">AM Speed<small data-ko="시트튜브 19&quot; / 22&quot; 선택" data-en="Seat tube 19&quot; / 22&quot;" data-ja="シートチューブ 19&quot; / 22&quot;" data-zh="座管 19&quot; / 22&quot;">시트튜브 19" / 22" 선택</small></td><td class="v">27–34" / 30–37"<span>69–86 cm / 76–94 cm</span></td></tr>
+<tr class="grp"><td class="m">TSR<small>Y-frame</small></td><td class="v">27–36"<span>69–91 cm</span></td></tr>
+<tr><td class="m">SST<small>Y-frame</small></td><td class="v">27–36"<span>69–91 cm</span></td></tr>
+<tr><td class="m">XTB<small>Y-frame</small></td><td class="v">27–36"<span>69–91 cm</span></td></tr>
+<tr><td class="m">Flyte<small>Y-frame</small></td><td class="v">27–36"<span>69–91 cm</span></td></tr>
+        </tbody>
+      </table>
+      <div class="foot" data-ko="cm 값은 인치 기준 환산치입니다. AM Speed는 시트튜브 길이(19&quot; / 22&quot;)에 따라 두 범위 중 하나가 적용됩니다." data-en="Centimetre values are converted from inches. For the AM Speed, one of the two ranges applies depending on seat tube length (19&quot; / 22&quot;)." data-ja="cm表記はインチからの換算値です。AM Speedはシートチューブ長（19&quot; / 22&quot;）により、2つの範囲のいずれかが適用されます。" data-zh="cm 数值由英寸换算而来。AM Speed 根据座管长度（19&quot; / 22&quot;）适用两个范围之一。">cm 값은 인치 기준 환산치입니다. AM Speed는 시트튜브 길이(19" / 22")에 따라 두 범위 중 하나가 적용됩니다.</div>
+    </div>
+  </div>
+</section>
+
+<section class="cta">
+  <div class="wrap rv">
+    <div class="eyebrow" data-ko="사이징 상담" data-en="Sizing Advice" data-ja="サイジング相談" data-zh="尺寸咨询">사이징 상담</div>
+    <h2 data-ko="어떤 모델이 맞을지 고민되시나요?" data-en="Not sure which model fits you?" data-ja="どのモデルが合うか迷っていますか？" data-zh="不确定哪款车型适合您？">어떤 모델이 맞을지 고민되시나요?</h2>
+    <p data-ko="서울 반포 루비워크샵 쇼룸에서 직접 타 보고 스템과 안장 높이를 맞춰 볼 수 있습니다. 신장과 인사이드 레그, 원하는 모델을 남겨 주시면 상담해 드립니다." data-en="Try a Moulton in person at the Rubi Workshop showroom in Banpo, Seoul, and dial in stem and saddle height. Or tell us your height, inside leg and preferred model and we will advise." data-ja="ソウル・盤浦のRubi Workshopショールームで実際に試乗し、ステムとサドルの高さを合わせることができます。身長、股下、ご希望のモデルをお知らせいただければご相談に応じます。" data-zh="欢迎到首尔盘浦 Rubi Workshop 展厅试骑，调整把立与座高。或留下您的身高、内腿长与心仪车型，我们将为您提供建议。">서울 반포 루비워크샵 쇼룸에서 직접 타 보고 스템과 안장 높이를 맞춰 볼 수 있습니다. 신장과 인사이드 레그, 원하는 모델을 남겨 주시면 상담해 드립니다.</p>
+    <a class="btn light" href="https://rubiworkshop.com/models" target="_blank" rel="noopener" data-ko="상담 신청" data-en="Consulting" data-ja="ご相談はこちら" data-zh="预约咨询">상담 신청</a>
+    <a class="btn light" href="/authorized-dealer/" data-ko="공식 딜러 찾기" data-en="Find a Dealer" data-ja="ディーラーを探す" data-zh="查找经销商">공식 딜러 찾기</a>
+  </div>
+</section>
+
+</main>
+
+<!-- ===== FOOTER ===== -->
+<footer class="footer">
+  <div class="wrap">
+    <div class="footer__grid">
+      <div class="footer__about">
+        <img data-src="moulton-bicycle-company-trademarked-logo.png" alt="Moulton Bicycle Company">
+        <p data-ko="몰튼 바이시클 컴퍼니는 혁신과 엔지니어링의 탁월함을 중심에 둡니다. 새로운 설계는 이 원칙과 함께, 60년 넘게 쌓아 온 영국 자전거 설계·제조의 경험 위에서 태어납니다." data-ja="モールトン・バイシクル・カンパニーは、革新とエンジニアリングの卓越性を中心に据えています。新しい設計はこの原則と共に、60年以上にわたる英国での自転車設計・製造の経験の上に生まれます。" data-zh="莫尔顿自行车公司以创新与卓越工程为核心。新的设计在这一原则之上，诞生于60余年英国自行车设计与制造的积淀。" data-en="The Moulton Bicycle Company places innovation and engineering excellence at its heart. New designs are led by these principles in combination with the knowledge that comes from over 60 years of experience in British bicycle design and manufacture.">몰튼 바이시클 컴퍼니는 혁신과 엔지니어링의 탁월함을 중심에 둡니다. 새로운 설계는 이 원칙과 함께, 60년 넘게 쌓아 온 영국 자전거 설계·제조의 경험 위에서 태어납니다.</p>
+        <small data-ko="한국 공식 수입원 루비컴퍼니 (Rubi Company)<br>서울 반포 · 루비워크샵 몰튼 쇼룸<br>Tel 1551-5320 · 월~금 12:00~19:00 · 토 10:00~15:30" data-ja="韓国正規輸入元 Rubi Company<br>ソウル・盤浦 Rubi Workshop モールトンショールーム<br>Tel +82 1551-5320 · 月〜金 12:00〜19:00 · 土 10:00〜15:30 KST" data-zh="韩国官方进口商 Rubi Company<br>首尔盘浦 · Rubi Workshop 莫尔顿展厅<br>Tel +82 1551-5320 · 周一至周五 12:00–19:00 · 周六 10:00–15:30 KST" data-en="Official Korean importer: Rubi Company<br>Moulton showroom at Rubi Workshop, Banpo, Seoul<br>Tel +82 1551-5320 · Mon–Fri 12:00–19:00 · Sat 10:00–15:30 KST">한국 공식 수입원 루비컴퍼니 (Rubi Company)<br>서울 반포 · 루비워크샵 몰튼 쇼룸<br>Tel 1551-5320 · 월~금 12:00~19:00 · 토 10:00~15:30</small>
+      </div>
+      <div>
+        <h4 data-ko="지원" data-ja="サポート" data-zh="支持" data-en="Support">지원</h4>
+        <ul>
+          <li><a href="/authorized-dealer" data-ko="공식 딜러" data-ja="正規ディーラー" data-zh="授权经销商" data-en="Find a store">공식 딜러</a></li>
+          <li><a href="/colors/" data-ko="컬러" data-ja="カラー" data-zh="颜色" data-en="Colours">컬러</a></li>
+          <li><a href="/sizing/" data-ko="사이징" data-ja="サイジング" data-zh="尺寸" data-en="Sizing">사이징</a></li>
+          <li><a href="/faq/">FAQ</a></li>
+          <li><a href="https://rubiworkshop.com/models" target="_blank" rel="noopener" data-ko="상담 신청" data-ja="ご相談はこちら" data-zh="预约咨询" data-en="Consulting">상담 신청</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 data-ko="몰튼" data-ja="モールトン" data-zh="莫尔顿" data-en="Moulton">몰튼</h4>
+        <ul>
+          <li><a href="https://www.moultonbicycles.co.uk/pages/about-the-moulton-bike" target="_blank" rel="noopener" data-ko="몰튼 자전거" data-ja="モールトンの自転車" data-zh="莫尔顿自行车" data-en="The Moulton Bike">몰튼 자전거</a></li>
+          <li><a href="/suspension/" data-ko="서스펜션" data-ja="サスペンション" data-zh="避震系统" data-en="Moulton Suspension">서스펜션</a></li>
+          <li><a href="/design/" data-ko="디자인의 진화" data-en="Design Evolution" data-ja="デザインの進化" data-zh="设计演进">디자인의 진화</a></li>
+          <li><a href="https://www.moultonbicycles.co.uk/pages/about-dr-alex-moulton" target="_blank" rel="noopener" data-ko="알렉스 몰튼 박사" data-ja="アレックス・モールトン博士" data-zh="亚历克斯·莫尔顿博士" data-en="Dr Alex Moulton">알렉스 몰튼 박사</a></li>
+          <li><a href="https://www.moultonbicycles.co.uk/pages/about-the-hall-estate" target="_blank" rel="noopener" data-ko="홀 에스테이트" data-ja="ホール・エステート" data-zh="Hall Estate" data-en="The Hall Estate">홀 에스테이트</a></li>
+          <li><a href="https://www.moultonbicycles.co.uk" target="_blank" rel="noopener">moultonbicycles.co.uk</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 data-ko="루비컴퍼니" data-ja="Rubi Company" data-zh="Rubi Company" data-en="Rubi Company">루비컴퍼니</h4>
+        <ul>
+          <li><a href="https://rubiworkshop.com" target="_blank" rel="noopener" data-ko="루비워크샵" data-ja="Rubi Workshop" data-zh="Rubi Workshop" data-en="Rubi Workshop">루비워크샵</a></li>
+          <li><a href="https://rubisupply.com" target="_blank" rel="noopener" data-ko="루비서플라이 (B2B)" data-ja="Rubi Supply (B2B)" data-zh="Rubi Supply (B2B)" data-en="Rubi Supply (B2B)">루비서플라이 (B2B)</a></li>
+          <li><a href="https://rubi.kr" target="_blank" rel="noopener">rubi.kr</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer__bot">
+      <div>© 2026 Moulton Bicycle Company · Korea site operated by Rubi Company</div>
+      <div class="footer__social">
+        <a href="https://www.instagram.com/moultonbicycles" target="_blank" rel="noopener" aria-label="Moulton Instagram"><svg viewBox="0 0 24 24"><path d="M12 2.2c3.2 0 3.6 0 4.8.1 3.3.1 4.8 1.7 4.9 4.9.1 1.3.1 1.6.1 4.8s0 3.6-.1 4.8c-.1 3.2-1.7 4.8-4.9 4.9-1.3.1-1.6.1-4.8.1s-3.6 0-4.8-.1c-3.3-.1-4.8-1.7-4.9-4.9C2.2 15.6 2.2 15.2 2.2 12s0-3.6.1-4.8C2.4 4 4 2.4 7.2 2.3 8.4 2.2 8.8 2.2 12 2.2zM12 0C8.7 0 8.3 0 7.1.1 2.7.3.3 2.7.1 7.1 0 8.3 0 8.7 0 12s0 3.7.1 4.9c.2 4.4 2.6 6.8 7 7C8.3 24 8.7 24 12 24s3.7 0 4.9-.1c4.4-.2 6.8-2.6 7-7 .1-1.2.1-1.6.1-4.9s0-3.7-.1-4.9c-.2-4.4-2.6-6.8-7-7C15.7 0 15.3 0 12 0zm0 5.8a6.2 6.2 0 1 0 0 12.4 6.2 6.2 0 0 0 0-12.4zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.4-11.8a1.4 1.4 0 1 0 0 2.9 1.4 1.4 0 0 0 0-2.9z"/></svg>moultonbicycles</a>
+        <a href="https://www.instagram.com/rubi.workshop" target="_blank" rel="noopener" aria-label="Rubi Workshop Instagram"><svg viewBox="0 0 24 24"><path d="M12 2.2c3.2 0 3.6 0 4.8.1 3.3.1 4.8 1.7 4.9 4.9.1 1.3.1 1.6.1 4.8s0 3.6-.1 4.8c-.1 3.2-1.7 4.8-4.9 4.9-1.3.1-1.6.1-4.8.1s-3.6 0-4.8-.1c-3.3-.1-4.8-1.7-4.9-4.9C2.2 15.6 2.2 15.2 2.2 12s0-3.6.1-4.8C2.4 4 4 2.4 7.2 2.3 8.4 2.2 8.8 2.2 12 2.2zM12 0C8.7 0 8.3 0 7.1.1 2.7.3.3 2.7.1 7.1 0 8.3 0 8.7 0 12s0 3.7.1 4.9c.2 4.4 2.6 6.8 7 7C8.3 24 8.7 24 12 24s3.7 0 4.9-.1c4.4-.2 6.8-2.6 7-7 .1-1.2.1-1.6.1-4.9s0-3.7-.1-4.9c-.2-4.4-2.6-6.8-7-7C15.7 0 15.3 0 12 0zm0 5.8a6.2 6.2 0 1 0 0 12.4 6.2 6.2 0 0 0 0-12.4zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.4-11.8a1.4 1.4 0 1 0 0 2.9 1.4 1.4 0 0 0 0-2.9z"/></svg>rubi.workshop</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+const IMG_BASE = 'https://www.moultonbicycles.co.uk/cdn/shop/files/';
+
+
+
+/* ===== helpers ===== */
+const $=(s,c=document)=>c.querySelector(s), $$=(s,c=document)=>[...c.querySelectorAll(s)];
+const LANGS=['ko','en','ja','zh'];
+const nl=(navigator.language||'en').toLowerCase();
+let LANG = localStorage.getItem('mk-lang') || (nl.startsWith('ko')?'ko':nl.startsWith('ja')?'ja':nl.startsWith('zh')?'zh':'en');
+if(!LANGS.includes(LANG)) LANG='en';
+const won = n => '₩' + Number(n).toLocaleString('ko-KR');
+
+/* ===== images ===== */
+$$('img[data-src]').forEach(img=>{ img.src = IMG_BASE + img.dataset.src; });
+
+/* ===== language ===== */
+function applyLang(){
+  document.documentElement.lang = LANG;
+  $$('[data-ko]').forEach(el=>{ el.innerHTML = el.dataset[LANG] ?? el.dataset.ko; });
+  $$('.lang button').forEach(b=>b.classList.toggle('on', b.dataset.lang===LANG));
+  document.title = {ko:'몰튼 사이징 가이드 | Moulton Bicycles Korea', en:'Sizing Guide | Moulton Bicycles Korea', ja:'モールトン サイジングガイド | Moulton Bicycles Korea', zh:'莫尔顿尺寸指南 | Moulton Bicycles Korea'}[LANG];
+}
+$$('.lang button').forEach(b=>b.addEventListener('click',()=>{ LANG=b.dataset.lang; localStorage.setItem('mk-lang',LANG); applyLang(); }));
+
+/* ===== mobile nav ===== */
+const burger=$('.burger'), mnav=$('.mnav');
+burger.addEventListener('click',()=>{ const o=mnav.classList.toggle('open'); burger.classList.toggle('open',o); burger.setAttribute('aria-expanded',o); document.body.style.overflow=o?'hidden':''; });
+$$('.mnav a').forEach(a=>a.addEventListener('click',()=>{ mnav.classList.remove('open'); burger.classList.remove('open'); document.body.style.overflow=''; }));
+
+
+/* ===== reveal on scroll ===== */
+const io=new IntersectionObserver(es=>es.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target);} }),{threshold:.12});
+$$('.rv').forEach(el=>io.observe(el));
+
+applyLang();
+</script>
+</body>
+</html>
