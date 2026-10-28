@@ -12,6 +12,16 @@ OG_DESC = 'Official showroom and authorised Moulton dealers across Korea.'
 
 CSS = """
 /* ===== Dealer page ===== */
+.eyebrow{font-size:14px;letter-spacing:.18em;margin-bottom:16px}
+.dhero .eyebrow{font-size:15px;margin-bottom:22px}
+.dealer__region{font-size:13px;letter-spacing:.16em}
+.dealer__badge{font-size:12px;letter-spacing:.14em;padding:6px 11px}
+.dealer__en{font-size:13px}
+.dealer__tags span{font-size:13px}
+.tier__count{font-size:14px;letter-spacing:.14em}
+.dhero__meta{font-size:14px;letter-spacing:.14em}
+.info li b{font-size:13px;letter-spacing:.12em}
+.nt .num{font-size:13px}
 .dhero{background:var(--ink);color:#fff;padding:clamp(72px,10vw,140px) 0 clamp(56px,7vw,96px)}
 .dhero .eyebrow{color:#fff;opacity:.85}
 .dhero h1{font-size:clamp(38px,6vw,84px);line-height:1;letter-spacing:-.03em;max-width:14ch}
