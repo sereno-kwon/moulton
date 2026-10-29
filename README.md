@@ -41,3 +41,9 @@
 
 ## 서체
 영문 Pretendard, 한글 S-Core Dream, 일본어 Noto Sans JP, 중국어 Noto Sans SC (CDN). 모두 `<head>`에서 로드.
+
+## 모델 페이지 (/<slug>/)
+- 14종: ns-double-pylon, ns-speed, ns-rapide, speed, ns-safari, ns-marathon, am-gt, jubilee, am-speed, am-22, xtb, sst, the-hall-se, tsr
+- 내용·사양: `pages/_model_data.py` (UK 제품 페이지 기준), 템플릿: `pages/models.py`
+- **가격은 `models.js` 한 곳에서만 수정** → 메인 그리드와 모델 페이지에 바로 반영 (재빌드 불필요)
+- 내용 수정 후에는 `python3 build.py models`

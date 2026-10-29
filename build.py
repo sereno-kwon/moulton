@@ -5,7 +5,8 @@
 
    실행:  python3 build.py            (pages/ 전체)
           python3 build.py design     (특정 페이지만)
-   새 페이지: pages/<slug>.py 를 suspension.py 형식으로 추가."""
+   새 페이지: pages/<slug>.py 를 suspension.py 형식으로 추가.
+   모델 페이지 14종은 pages/models.py (데이터: pages/_model_data.py, 가격: /models.js)."""
 import re, sys, pathlib, importlib
 
 ROOT = pathlib.Path(__file__).parent
@@ -42,6 +43,10 @@ def load_shell():
 
 def build(slug, shell):
     mod = importlib.import_module(f'pages.{slug}')
+    for page in getattr(mod, 'PAGES', None) or [mod]:   # 한 모듈이 여러 페이지를 만들 수 있음 (pages/models.py)
+        build_page(page, shell)
+
+def build_page(mod, shell):
     js = re.sub(r"document\.title = \{[^\n]*\}\[LANG\];", f"document.title = {mod.TITLES_JS}[LANG];", shell['js'])
     page = f"""<!DOCTYPE html>
 <html lang="ko">

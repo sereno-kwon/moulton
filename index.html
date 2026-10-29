@@ -337,7 +337,7 @@ html[lang="ko"] .hero__txt h1{word-break:keep-all}
     <div class="eyebrow" data-ko="신모델" data-ja="新モデル" data-zh="新车型" data-en="The New">신모델</div>
     <h2>NS <em>Rapide</em></h2>
     <p data-ko="뉴 시리즈의 최신작. 스테인리스가 아닌 스틸 스페이스 프레임에 캄파놀로 슈퍼 레코드를 조합했습니다." data-ja="ニューシリーズ最新作。ステンレスではなくスチールのスペースフレームに、カンパニョーロ スーパーレコードを組み合わせました。" data-zh="New Series 最新之作。采用钢制而非不锈钢的空间桁架车架，搭配 Campagnolo Super Record 套件。" data-en="The newest addition to the New Series: a steel space-frame paired with Campagnolo Super Record.">뉴 시리즈의 최신작. 스테인리스가 아닌 스틸 스페이스 프레임에 캄파놀로 슈퍼 레코드를 조합했습니다.</p>
-    <a class="btn light" href="https://rubiworkshop.com/models" target="_blank" rel="noopener" data-ko="상담 신청" data-ja="ご相談はこちら" data-zh="预约咨询" data-en="Enquire">상담 신청</a>
+    <a class="btn light" href="/ns-rapide/" data-ko="자세히 보기" data-ja="詳しく見る" data-zh="了解更多" data-en="Explore">자세히 보기</a>
   </div>
 </section>
 
@@ -568,6 +568,7 @@ html[lang="ko"] .hero__txt h1{word-break:keep-all}
   </div>
 </footer>
 
+<script src="/models.js"></script>
 <script>
 /* ============================================================
    IMAGE BASE
@@ -577,28 +578,6 @@ html[lang="ko"] .hero__txt h1{word-break:keep-all}
    ============================================================ */
 const IMG_BASE = 'https://www.moultonbicycles.co.uk/cdn/shop/files/';
 
-/* ============================================================
-   MODELS
-   price: 원화 숫자 (예: 38500000). 비워 두면 "가격 문의"로 표시됩니다.
-   from: true 이면 "~부터" 표기. tag: 카드 좌상단 뱃지.
-   series: ns | moulton | am | y | se  (필터용)
-   ============================================================ */
-const MODELS = [
-  {name:'NS D-Pylon',  series:'ns',      label:'New Series',       img:'moulton-ns-double-pylon-stainless.jpg', alt:'moulton-ns-double-pylon-stainless-angle-1.jpg', price:'', from:false, tag:''},
-  {name:'NS Speed',    series:'ns',      label:'New Series',       img:'moulton-ns-speed-stainless.jpg',        alt:'moulton-ns-speed-stainless-angle-1.jpg',        price:'', from:false, tag:''},
-  {name:'NS Rapide',   series:'ns',      label:'New Series',       img:'moulton-ns-rapide-sunrise-orange.jpg',  alt:'moulton-ns-rapide-sunrise-orange-angle-1.jpg',  price:'', from:false, tag:{ko:'신모델',en:'New Model',ja:'新モデル',zh:'新车型'}},
-  {name:'Speed',       series:'moulton', label:'Moulton',          img:'moulton-speed-stainless.jpg',           alt:'moulton-speed-stainless-angle-1.jpg',           price:'', from:false, tag:''},
-  {name:'NS Safari',   series:'ns',      label:'New Series',       img:'moulton-ns-safari-willow-green.jpg',    alt:'moulton-ns-safari-willow-green-angle-1.jpg',    price:'', from:false, tag:''},
-  {name:'NS Marathon', series:'ns',      label:'New Series',       img:'moulton-ns-marathon-stainless-blue-hl.jpg', alt:'moulton-ns-marathon-stainless-blue-hl-angle-1.jpg', price:'', from:true, tag:''},
-  {name:'AM GT',       series:'am',      label:'AM Series',        img:'moulton-gt-mk3-stainless.jpg',          alt:'moulton-gt-mk3-stainless-angle-1.jpg',          price:'', from:true, tag:''},
-  {name:'Jubilee',     series:'am',      label:'AM Series',        img:'moulton-jubilee-ferrari-red.jpg',       alt:'moulton-jubilee-ferrari-red-angle-1.jpg',       price:'', from:false, tag:''},
-  {name:'AM Speed',    series:'am',      label:'AM Series',        img:'moulton-am-speed-white.jpg',            alt:'moulton-am-speed-white-angle-1.jpg',            price:'', from:false, tag:''},
-  {name:'AM 22',       series:'am',      label:'AM Series',        img:'moulton-am-22-steely-grey.jpg',         alt:'moulton-am-22-steely-grey-angle-1.jpg',         price:'', from:false, tag:''},
-  {name:'XTB',         series:'y',       label:'Y-frame',          img:'moulton-xtb-steely-grey.jpg',           alt:'moulton-xtb-steely-grey-angle-1.jpg',           price:'', from:false, tag:''},
-  {name:'SST',         series:'y',       label:'Y-frame',          img:'moulton-sst-airforce-blue-side.jpg',    alt:'moulton-sst-airforce-blue-angle-1.jpg',         price:'', from:true, tag:''},
-  {name:'The Hall SE', series:'se',      label:'Special Edition',  img:'moulton-the-hall-se-hall-green.jpg',    alt:'moulton-the-hall-se-hall-green-angle-1.jpg',    price:'', from:false, tag:{ko:'스페셜 에디션',en:'Special Edition',ja:'スペシャルエディション',zh:'特别版'}},
-  {name:'TSR',         series:'y',       label:'Y-frame',          img:'moulton-tsr-powder-pink.jpg',           alt:'moulton-tsr-powder-pink-angle-1.jpg',           price:'', from:false, tag:''},
-];
 
 const PRESS = [
   {q:{en:"You'd probably get off the Moulton Double-Pylon and think you've just ridden one of the best all-round, do-anything bicycles in the world!", ko:"더블 파일런에서 내리면 아마 이렇게 생각할 겁니다. 방금 세계에서 가장 만능인 자전거 중 하나를 탔다고.", ja:"ダブルパイロンから降りたとき、きっとこう思うでしょう。世界で最も万能な自転車の一台に乗ったのだと。", zh:"从 Double-Pylon 上下来时，你大概会想：刚刚骑的是世界上最全能的自行车之一。"}, logo:'bike-radar-logo-small.png', name:'BikeRadar'},
@@ -640,7 +619,7 @@ function renderGrid(){
   MODELS.forEach(m=>{
     const a=document.createElement('a');
     a.className='card'+(FILTER!=='all'&&m.series!==FILTER?' hide':'');
-    a.href='https://rubiworkshop.com/models'; a.target='_blank'; a.rel='noopener';
+    a.href='/'+m.slug+'/';
     const FROM={ko:w=>w+' 부터', en:w=>'From '+w, ja:w=>w+'〜', zh:w=>w+' 起'};
     const ASK={ko:'가격 문의', en:'Price on request', ja:'価格はお問い合わせください', zh:'价格请咨询'};
     const priceTxt = m.price ? (m.from ? FROM[LANG](won(m.price)) : won(m.price)) : ASK[LANG];
