@@ -47,3 +47,7 @@
 - 내용·사양: `pages/_model_data.py` (UK 제품 페이지 기준), 템플릿: `pages/models.py`
 - **가격은 `models.js` 한 곳에서만 수정** → 메인 그리드와 모델 페이지에 바로 반영 (재빌드 불필요)
 - 내용 수정 후에는 `python3 build.py models`
+
+## SEO
+- `sitemap.xml`: `python3 build.py` 실행 시 자동 생성 (루트 + 모든 하위 페이지)
+- `robots.txt`: 전체 허용, 빌드용 파일(`/pages/`, `build.py`, `README.md`) 제외, sitemap 위치 안내

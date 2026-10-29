@@ -6,6 +6,7 @@
    실행:  python3 build.py            (pages/ 전체)
           python3 build.py design     (특정 페이지만)
    새 페이지: pages/<slug>.py 를 suspension.py 형식으로 추가.
+   빌드 후 sitemap.xml 자동 갱신.
    모델 페이지 14종은 pages/models.py (데이터: pages/_model_data.py, 가격: /models.js)."""
 import re, sys, pathlib, importlib
 
@@ -78,8 +79,32 @@ def build_page(mod, shell):
     out.write_text(page, encoding='utf-8')
     print('written', out.relative_to(ROOT), len(page), 'bytes')
 
+SITE = 'https://moultonbicycles.co.kr'
+
+def write_sitemap():
+    """루트와 <폴더>/index.html 을 모두 찾아 sitemap.xml 생성. 빌드할 때마다 자동 갱신."""
+    import datetime
+    model_slugs = set()
+    try:
+        from pages._model_data import MODELS
+        model_slugs = {m['slug'] for m in MODELS}
+    except Exception:
+        pass
+    def lastmod(p):
+        return datetime.datetime.fromtimestamp(p.stat().st_mtime, datetime.timezone.utc).strftime('%Y-%m-%d')
+    urls = [(SITE + '/', lastmod(ROOT / 'index.html'), '1.0', 'weekly')]
+    for d in sorted(p for p in ROOT.iterdir() if p.is_dir() and (p / 'index.html').exists()):
+        pri = '0.8' if d.name in model_slugs else '0.6'
+        urls.append((f'{SITE}/{d.name}/', lastmod(d / 'index.html'), pri, 'monthly'))
+    body = ''.join(f'  <url><loc>{u}</loc><lastmod>{m}</lastmod><changefreq>{c}</changefreq><priority>{p}</priority></url>\n'
+                   for u, m, p, c in urls)
+    xml = '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n' + body + '</urlset>\n'
+    (ROOT / 'sitemap.xml').write_text(xml, encoding='utf-8')
+    print('written sitemap.xml', len(urls), 'urls')
+
 if __name__ == '__main__':
     shell = load_shell()
     slugs = sys.argv[1:] or [p.stem for p in (ROOT / 'pages').glob('*.py') if not p.stem.startswith('_')]
     for s in slugs:
         build(s, shell)
+    write_sitemap()

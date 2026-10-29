@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+Disallow: /pages/
+Disallow: /build.py
+Disallow: /README.md
+
+Sitemap: https://moultonbicycles.co.kr/sitemap.xml
