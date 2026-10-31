@@ -11,6 +11,7 @@
 import re, sys, pathlib, importlib
 
 ROOT = pathlib.Path(__file__).parent
+SITE = 'https://moultonbicycles.co.kr'
 sys.path.insert(0, str(ROOT))
 
 def t(ko, en, ja, zh):
@@ -47,7 +48,26 @@ def build(slug, shell):
     for page in getattr(mod, 'PAGES', None) or [mod]:   # 한 모듈이 여러 페이지를 만들 수 있음 (pages/models.py)
         build_page(page, shell)
 
+OG_DEFAULT = 'https://www.moultonbicycles.co.uk/cdn/shop/files/moulton-ns-safari-bike-with-accessories-1200x628.jpg'
+
+def seo_ld(mod):
+    """검색엔진용 구조화 데이터: 이동 경로(BreadcrumbList). 페이지 모듈에 PRODUCT(dict)가 있으면 Product도 함께."""
+    import json, html as _h
+    name = _h.unescape(mod.TITLE_KO.split(' | ')[0])
+    graph = [{
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {"@type": "ListItem", "position": 1, "name": "몰튼 바이시클 코리아", "item": SITE + "/"},
+            {"@type": "ListItem", "position": 2, "name": name, "item": f"{SITE}/{mod.SLUG}/"},
+        ],
+    }]
+    if getattr(mod, 'PRODUCT', None):
+        graph.append(mod.PRODUCT)
+    data = {"@context": "https://schema.org", "@graph": graph}
+    return '<script type="application/ld+json">\n' + json.dumps(data, ensure_ascii=False, indent=1) + '\n</script>'
+
 def build_page(mod, shell):
+    og_image = getattr(mod, 'OG_IMAGE', None) or OG_DEFAULT
     js = re.sub(r"document\.title = \{[^\n]*\}\[LANG\];", f"document.title = {mod.TITLES_JS}[LANG];", shell['js'])
     page = f"""<!DOCTYPE html>
 <html lang="ko">
@@ -60,7 +80,15 @@ def build_page(mod, shell):
 <meta property="og:description" content="{mod.OG_DESC}">
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://moultonbicycles.co.kr/{mod.SLUG}/">
+<meta property="og:image" content="{og_image}">
+<meta property="og:site_name" content="몰튼 바이시클 코리아">
+<meta property="og:locale" content="ko_KR">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="{mod.OG_TITLE}">
+<meta name="twitter:description" content="{mod.OG_DESC}">
+<meta name="twitter:image" content="{og_image}">
 <link rel="canonical" href="https://moultonbicycles.co.kr/{mod.SLUG}/">
+{seo_ld(mod)}
 {shell['head_links']}{shell['style']}
 <style>{mod.CSS}</style>
 </head>
@@ -79,7 +107,6 @@ def build_page(mod, shell):
     out.write_text(page, encoding='utf-8')
     print('written', out.relative_to(ROOT), len(page), 'bytes')
 
-SITE = 'https://moultonbicycles.co.kr'
 
 def write_sitemap():
     """루트와 <폴더>/index.html 을 모두 찾아 sitemap.xml 생성. 빌드할 때마다 자동 갱신."""

@@ -323,7 +323,7 @@ def render(m):
     # gallery
     g0 = m['gallery'][0]
     thumbs = ''.join(
-        f'<button type="button" class="{"on" if i == 0 else ""}" aria-label="image {i+1}"><img data-src="{g}" alt="" loading="lazy"></button>'
+        f'<button type="button" class="{"on" if i == 0 else ""}" aria-label="image {i+1}"><img data-src="{g}" alt="Moulton {m['name']} {i+1}" loading="lazy"></button>'
         for i, g in enumerate(m['gallery']))
 
     icons = ''.join(
@@ -344,7 +344,7 @@ def render(m):
     if m['details']:
         n = 'n5' if len(m['details']) >= 3 else 'n1'
         det = f'<section class="wrap details {n} rv">' + ''.join(
-            f'<figure><img data-src="{d}" alt="" loading="lazy"></figure>' for d in m['details']) + '</section>'
+            f'<figure><img data-src="{d}" alt="Moulton {m["name"]} 디테일" loading="lazy"></figure>' for d in m['details']) + '</section>'
 
     # key features table
     key_tbl = ''.join(f'<tr><th>{label(k)}</th><td>{tr_cell(v)}</td></tr>' for k, v in keyrows)
@@ -370,7 +370,7 @@ def render(m):
     if m['lifestyle']:
         n = 'n2' if len(m['lifestyle']) >= 2 else 'n1'
         life = f'<section class="wrap life {n} rv">' + ''.join(
-            f'<figure><img data-src="{x}" alt="" loading="lazy"></figure>' for x in m['lifestyle'][:2]) + '</section>'
+            f'<figure><img data-src="{x}" alt="Moulton {m["name"]} 라이프스타일" loading="lazy"></figure>' for x in m['lifestyle'][:2]) + '</section>'
 
     # other models: next 4 in grid order
     idx = GRID_ORDER.index(m['slug'])
@@ -512,7 +512,8 @@ def _page(m):
         TITLES_JS="{ko:'Moulton %s | 몰튼 바이시클 코리아', en:'Moulton %s | Moulton Bicycles Korea', ja:'Moulton %s | モールトン・バイシクル・コリア', zh:'Moulton %s | 莫尔顿自行车韩国'}" % (n, n, n, n),
         DESCRIPTION=html.escape(m['desc'][0][:150], quote=True),
         OG_TITLE=f'Moulton {n} | Moulton Bicycles Korea',
-        OG_DESC=html.escape(m['tag'][1], quote=True),
+        OG_DESC=html.escape(m['tag'][0] + ' · ' + m['tag'][1], quote=True),
+        OG_IMAGE='https://www.moultonbicycles.co.uk/cdn/shop/files/' + m['hero'],
         CSS=CSS,
         main=(lambda m=m: render(m)),
     )

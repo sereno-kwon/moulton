@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 """/design 페이지 본문 (디자인 역사, UK 'Design Evolution' 페이지 번역). build.py가 읽어 design/index.html 생성."""
+import re
 from build import t
 
 SLUG = 'design'
@@ -73,7 +74,7 @@ html[lang="ko"] .decade__head h2,html[lang="ja"] .decade__head h2,html[lang="zh"
 def ev(year, title, body, img, cap, wide=False):
     """연표 항목. body는 (ko,en,ja,zh) 문단 튜플의 리스트"""
     ps = ''.join(f'<p {t(*p)}>{p[0]}</p>' for p in body)
-    fig = f'<figure class="ev__img{" wide" if wide else ""}"><img data-src="{img}" alt="" loading="lazy"><figcaption>{cap}</figcaption></figure>'
+    fig = f'<figure class="ev__img{" wide" if wide else ""}"><img data-src="{img}" alt="{re.sub(r'<[^>]+>', '', cap).replace('"', '')}" loading="lazy"><figcaption>{cap}</figcaption></figure>'
     return f"""
     <article class="ev rv">
       <div class="ev__meta"><div class="y">{year}</div><h3 {t(*title)}>{title[0]}</h3></div>
